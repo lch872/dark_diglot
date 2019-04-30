@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'DgltMain.dart';
 
 void main ( )
 => runApp ( MyApp ( ) );
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget
         {
                 return MaterialApp
                         (
-                        title: 'zzzDark Diglot',
+                        title: 'Dark Diglot',
                         theme: ThemeData
                                 (
                                 // This is the theme of your application.
@@ -25,7 +26,20 @@ class MyApp extends StatelessWidget
                                 // is not restarted.
                                 primarySwatch: Colors.deepPurple,
                                 ),
-                        home: MyHomePage ( title: 'Dark Diglot' ),
+                        
+                        home: MyHomePage ( title: 'Dark Diglot' ), // becomes the route named '/'
+                        routes: <String, WidgetBuilder>
+                        {
+                                '/a': ( BuildContext context )
+                                => DgltMainPage ( title: 'page A' ),
+                                
+                                '/b': ( BuildContext context )
+                                => DgltMainPage ( title: 'page B' ),
+                                
+                                '/c': ( BuildContext context )
+                                => DgltMainPage ( title: 'page C' ),
+                        },
+                        
                         );
         }
 }
@@ -59,16 +73,23 @@ class _MyHomePageState extends State<MyHomePage>
         
         void _incrementCounter ( )
         {
-                setState ( ( )
-                           {
-                                   // This call to setState tells the Flutter framework that something has
-                                   // changed in this State, which causes it to rerun the build method below
-                                   // so that the display can reflect the updated values. If we changed
-                                   // _counter without calling setState(), then the build method would not be
-                                   // called again, and so nothing would appear to happen.
-                                   _counter++;
-                           }
-                           );
+                _counter++;
+                setState (
+                        ( )
+                    {
+                            // This call to setState tells the Flutter framework that something has
+                            // changed in this State, which causes it to rerun the build method below
+                            // so that the display can reflect the updated values. If we changed
+                            // _counter without calling setState(), then the build method would not be
+                            // called again, and so nothing would appear to happen.
+                            
+                    }
+                        );
+        }
+        
+        void _goToMain()
+        {
+                Navigator.of(context).pushNamed('/b');
         }
         
         @override
@@ -125,10 +146,13 @@ class _MyHomePageState extends State<MyHomePage>
                                 ),
                         floatingActionButton: FloatingActionButton
                                 (
-                                onPressed: _incrementCounter,
+                                onPressed: _goToMain, //_incrementCounter,
                                 tooltip: 'Increment',
                                 child: Icon ( Icons.add ),
                                 ), // This trailing comma makes auto-formatting nicer for build methods.
+ 
                         );
         }
 }
+
+
