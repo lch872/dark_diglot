@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget
         {
                 return MaterialApp
                         (
-                        title: 'Dark Diglot',
+                        title: 'zzzDark Diglot',
                         theme: ThemeData
                                 (
                                 // This is the theme of your application.
