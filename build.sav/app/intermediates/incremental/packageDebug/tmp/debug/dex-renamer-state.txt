@@ -1,4 +1,0 @@
-#Tue Apr 30 15:21:16 CEST 2019
-base.0=/Users/larpoux/projmac/diglot_dark/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex

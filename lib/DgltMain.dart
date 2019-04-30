@@ -1,5 +1,21 @@
+/*
+ *   This file is part of Diglot.
+ *
+ *   Diglot is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation 3.0 (GPL3).
+ *
+ *   Diglot is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Diglot.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import 'package:flutter/material.dart';
+import 'DgltGlobals.dart';
 
 
 
@@ -45,7 +61,16 @@ class _DgltMainPageState extends State<DgltMainPage>
                     }
                         );
         }
-        
+
+
+        void _onItemTapped(int index)
+        {
+                setState(()
+                         {
+                });
+        }
+
+
         @override
         Widget build ( BuildContext context )
         {
@@ -57,13 +82,29 @@ class _DgltMainPageState extends State<DgltMainPage>
                 // than having to individually change instances of widgets.
                 return Scaffold
                         (
+                        backgroundColor: BACKGROUND_COLOR,
                         appBar: AppBar
                                 (
                                 // Here we take the value from the MyHomePage object that was created by
                                 // the App.build method, and use it to set our appbar title.
-                                title: Text ( widget.title ),
+                                title: Text ( 'Average 95%'/*widget.title*/ ),
                                 ),
-                        body: Center
+/*
+                        bottomNavigationBar: BottomNavigationBar
+                        (
+                            items: <BottomNavigationBarItem>
+                                [
+                                        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+                                        BottomNavigationBarItem(icon: Icon(Icons.business), title: Text('Business')),
+                                        BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('School')),
+                                ],
+                                currentIndex: 1,
+                                fixedColor: Colors.blue,
+                                onTap: _onItemTapped,
+        
+                        ),
+*/
+                        body: Center //Column// Center
                                 (
                                 // Center is a layout widget. It takes a single child and positions it
                                 // in the middle of the parent.
@@ -83,18 +124,60 @@ class _DgltMainPageState extends State<DgltMainPage>
                                         // center the children vertically; the main axis here is the vertical
                                         // axis because Columns are vertical (the cross axis would be
                                         // horizontal).
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                                 children: <Widget>
                                                 [
-                                                        Text ( 'La fucking plume', ),
-                                                        Text
+
+                                                        Container
                                                                 (
-                                                                '$_counter',
-                                                                style: Theme
-                                                                    .of ( context )
-                                                                    .textTheme
-                                                                    .display1,
+                                                                        width: 200,
+                                                                        height: 100,
+                                                                        decoration: BoxDecoration
+                                                                                (
+                                                                                        border: new Border.all
+                                                                                                (
+                                                                                                        color: Colors.green,
+                                                                                                        width: 5.0,
+                                                                                                        style: BorderStyle.solid
+                                                                                                ),
+
+                                                                                        borderRadius: new BorderRadius.only
+                                                                                        (
+                                                                                                topLeft: new Radius.circular(20.0),
+                                                                                                topRight: new Radius.circular(20.0),
+                                                                                                bottomLeft: new Radius.circular(20.0),
+                                                                                                bottomRight: new Radius.circular(20.0),
+                                                                                        ),
+                                                                                        
+
+                                                                                        color: Colors.white,
+        
+                                                                                        boxShadow:
+                                                                                        [
+                                                                                                new BoxShadow
+                                                                                                        (
+                                                                                                                color: Colors.black38,
+                                                                                                                offset: new Offset(10.0, 10.0),
+                                                                                                                blurRadius: 5.0,
+                                                                                                                spreadRadius: 7.0
+                                                                                                        )
+                                                                                        ],
+
+                                                                                        ),
+                                                                        
+                                                                        child: const Text('RGB', textAlign: TextAlign.center),
                                                                 ),
+                                                                        
+                                                                        
+                                                                        Text ( 'The fucking plume', ),
+                                                                        Text
+                                                                                (
+                                                                                '$_counter',
+                                                                                style: Theme
+                                                                                    .of ( context )
+                                                                                    .textTheme
+                                                                                    .display1,
+                                                                                ),
                                                 ],
                                         ),
                                 ),
