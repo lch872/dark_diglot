@@ -17,3 +17,45 @@
 import 'package:flutter/material.dart';
 
 const BACKGROUND_COLOR = Colors.deepPurple;
+const BUTTON_COLOR = Colors.blue;
+const PANEL_COLOR = Colors.blue[200];
+const BUTTON_HEIGHT = 30.0;
+
+enum tCardType { UNTESTED, NEW, RECENT, OLDER, ANCIENT }
+
+enum tPhase { QUESTION, ANSWER, PREVIOUS, BROWSE }
+tPhase phase = tPhase.QUESTION;
+
+enum tMode { TEST, HANJA, DEF, BROWSE, TEACHER_BROWSE }
+tMode mode = tMode.TEST;
+
+
+enum tStudent { TEACHER, DAVE, JOE, RICK, DOUG, MIKE, RICHARD, LINUS, NIKLAUS, ALAN, ANDERS }
+tStudent student = tStudent.DAVE;
+
+bool teacherMode() => (student == tStudent.TEACHER);
+
+bool hasAlternateTranscriptions = false;
+String alternateTranscription = 'Hanja';
+
+int cardNo = 15;
+int totalCards = 718;
+int totalRight = 50;
+int totalWrong = 50;
+int score() => (totalRight + totalWrong != 0) ? totalRight * 100 ~/ (totalRight + totalWrong) : 100;
+
+
+screenWidth( BuildContext context)
+{
+        return MediaQuery
+            .of ( context )
+            .size.width;
+}
+
+screenHeight( BuildContext context)
+{
+        return MediaQuery
+            .of ( context )
+            .size.height;
+}
+
