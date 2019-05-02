@@ -79,6 +79,16 @@ class _DgltMainPageState extends State<DgltMainPage>
                         );
         }
         
+        void chkChanged ( bool b )
+        {
+                print ( 'chkChanged' );
+        }
+        
+        bool isChkPanelVisible ( )
+        {
+                return false;
+        }
+        
         
         @override
         Widget build ( BuildContext context )
@@ -98,14 +108,242 @@ class _DgltMainPageState extends State<DgltMainPage>
                     .size
                     .height}' );
                 
+                Container chkPanel = Container (
+                        //width: 120,
+                        //height: 30,
+                        //constraints: BoxConstraints.expand(),
+                        child: new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                        Row ( mainAxisAlignment: MainAxisAlignment.start,
+                                            
+                                                  children: [
+                                                          SizedBox ( width: 30, height: 30, child: Checkbox ( value: false, onChanged: chkChanged ) ),
+                                                          Text ( 'Expl.  ' )] ),
+                                        Row ( children: [ SizedBox ( width: 30, height: 30, child: Checkbox ( value: false, onChanged: chkChanged ) ),
+                                                Text ( 'Audio' )] ),
+                                        Row ( children: [ SizedBox ( width: 30, height: 30, child: Checkbox ( value: false, onChanged: chkChanged ) ),
+                                                Text ( 'Hanja' )] ),
+
+//                                                                                                new CheckboxListTile(
+//                                                                                                        value: true,
+//                                                                                                        onChanged: chkChanged,
+//                                                                                                        title: new Text('Hi'),
+//                                                                                                        controlAffinity: ListTileControlAffinity.leading,
+//                                                                                                        //subtitle: new Text('Sub'),
+//                                                                                                        //secondary: new Icon(Icons.archive),
+//                                                                                                        activeColor: Colors.red,
+//                                                                                                        ),
+                                ],
+                                ),
+                        );
+                
+                
+                Container stacksPanel =
+                Container
+                        (
+                        //width: 200,
+                        //height: 100,
+                        margin: const EdgeInsets.all( 10.0 ),
+                                // alignment: Alignment ( 0.5, 0.5 ),
+                                
+                                child: Column
+                                        (
+                                        
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: <Widget>
+                                        [
+                                                //IntrinsicWidth(child:
+                                                Row
+                                                        (
+                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                        children: <Widget>
+                                                        [
+                                                                const Text( 'Untested', textAlign: TextAlign.center,
+                                                                                    style: TextStyle ( color: Colors.white ), ),
+                                                                const Text( 'New', textAlign: TextAlign.center,
+                                                                                    style: TextStyle ( color: Colors.white ), ),
+                                                                const Text( 'Recent', textAlign: TextAlign.center,
+                                                                                    style: TextStyle ( color: Colors.white ), ),
+                                                                const Text( 'Older', textAlign: TextAlign.center,
+                                                                                    style: TextStyle ( color: Colors.white ), ),
+                                                                const Text( 'Ancient', textAlign: TextAlign.center,
+                                                                                    style: TextStyle ( color: Colors.white ), ),
+                                                        ],
+                                                        ),
+                                                //),
+                                                //IntrinsicWidth( child:
+                                                Row
+                                                        (
+                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                        children: <Widget>
+                                                        [
+                                                                Text ( nbrStackCards[tCardType.UNTESTED.index].toString ( ), textAlign: TextAlign.center,
+                                                                               style: TextStyle ( color: Colors.white ), ),
+                                                                Text ( nbrStackCards[tCardType.NEW.index].toString ( ), textAlign: TextAlign.center,
+                                                                               style: TextStyle ( color: Colors.white ), ),
+                                                                Text ( nbrStackCards[tCardType.RECENT.index].toString ( ), textAlign: TextAlign.center,
+                                                                               style: TextStyle ( color: Colors.white ), ),
+                                                                Text ( nbrStackCards[tCardType.OLDER.index].toString ( ), textAlign: TextAlign.center,
+                                                                               style: TextStyle ( color: Colors.white ), ),
+                                                                Text ( nbrStackCards[tCardType.ANCIENT.index].toString ( ), textAlign: TextAlign.center,
+                                                                               style: TextStyle ( color: Colors.white ), ),
+                                                        ],
+                                                        
+                                                        )
+                                                //)
+                                        
+                                        ],
+                                        
+                                        ),
+                        
+                        );
+                
+                
                 //Container questionPanel = Container
                 Container questionPanel ( )
                 {
                         return Container
                                 (
+                                //width: 300,
+                                height:
+                                100
+                                        ,
+                                        //alignment: Alignment ( - 0.5, 0.0 ),
+                                        margin: const EdgeInsets.all( 10.0 ),
+                                        decoration: BoxDecoration
+                                                (
+                                                border: new Border.all
+                                                        (
+                                                    color: Colors.indigo[900],
+                                                    width: 5.0,
+                                                    style: BorderStyle.solid
+                                                    ),
+                                                
+                                                borderRadius: new BorderRadius.only
+                                                        (
+                                                        topLeft: new Radius.circular( 20.0 ),
+                                                        topRight: new Radius.circular( 20.0 ),
+                                                        bottomLeft: new Radius.circular( 20.0 ),
+                                                        bottomRight: new Radius.circular( 20.0 ),
+                                                        ),
+                                                
+                                                
+                                                color: PANEL_COLOR,
+                                                
+                                                boxShadow:
+                                                [
+                                                        new BoxShadow
+                                                                (
+                                                            color: Colors.black38,
+                                                            offset: new Offset( 10.0, 10.0 ),
+                                                            blurRadius: 5.0,
+                                                            spreadRadius: 7.0
+                                                            )
+                                                ],
+                                                
+                                                ),
+                                        
+                                        child:
+
+
+
+
+
+
+//                                        ConstrainedBox(
+//                                                constraints: BoxConstraints(
+//                                                        minWidth: double.infinity,
+//                                                        maxWidth: double.infinity,
+//                                                        minHeight: double.infinity,
+//                                                        maxHeight: double.infinity,
+//                                                        ),
+//                                                child:
+        
+        
+        
+        
+        
+                                Row (
+                                                
+                                                
+                                                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                       // mainAxisSize: MainAxisSize.max,
+                                                        //crossAxisAlignment: CrossAxisAlignment.stretch,
+                                                        children: <Widget>
+                                                        [
+
+
+
+
+
+                               // ConstrainedBox(
+                                                  //constraints: BoxConstraints(
+                                                          //maxWidth: double.infinity,
+                                                          //minWidth: double.infinity,
+                                                       //minWidth: 400.0,
+                                                       //maxWidth: 400.0,
+//                                                        //minHeight: double.infinity,
+//                                                        //maxHeight: double.infinity,
+                                                                // ),
+                                                               // child:
+        
+        
+        
+        
+                        //ConstrainedBox(
+                                                //constraints: BoxConstraints.expand(), child: Center( child:
+                                                                Expanded( child:
+                                                Column (
+                                                        children: <Widget>[
+                                                                Expanded(
+                                                                        child: Container(
+                                                                                decoration: const BoxDecoration(color: Colors.red),
+                                                                                ),
+                                                                        flex: 1,
+                                                                        ),
+                                                                Expanded(
+                                                                        child: Container(
+                                                                                decoration: const BoxDecoration(color: Colors.green),
+                                                                                ),
+                                                                        flex: 1,
+                                                                        ),
+                                                                Expanded(
+                                                                        child: Container(
+                                                                                decoration: const BoxDecoration(color: Colors.blue),
+                                                                                ),
+                                                                        flex: 1,
+                                                                        ),
+                                                        ],
+                                                        ///)),
+                                ),
+                                                        ),
+                                                                isChkPanelVisible ( )
+                                                                ? chkPanel
+                                                                : const SizedBox( ),
+
+                                                        ],
+                                                
+                        
+                        
+                        
+                                                )
+                                        
+                                        
+                                        ///const Text( 'Question', textAlign: TextAlign.center
+                                        /// )
+                                        ,
+                                );
+                }
+                
+                
+                Container examplesPanel ( )
+                {
+                        return Container
+                                (
                                 //width: 200,
                                 height:
-                                150
+                                130
                                         ,
                                         alignment: Alignment ( - 0.5, 0.0 ),
                                         margin: const EdgeInsets.all( 10.0 ),
@@ -142,17 +380,18 @@ class _DgltMainPageState extends State<DgltMainPage>
                                                 
                                                 ),
                                         
-                                        child: const Text( 'Question', textAlign: TextAlign.center
+                                        child: const Text( 'Examples', textAlign: TextAlign.center
                                                            )
                                         ,
                                 );
                 }
                 
+                
                 Container answerPanel =
                 Container
                         (
                         //width: 200,
-                        height: 100,
+                        height: 70,
                                 margin: const EdgeInsets.all( 10.0 ),
                                 alignment: Alignment ( 0.8, 0.8 ),
                                 decoration: BoxDecoration
@@ -292,142 +531,345 @@ class _DgltMainPageState extends State<DgltMainPage>
                         );
                 
                 
-                Widget browseButtonBar = Column (
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                                ButtonBar
-                                        (
-                                    alignment: MainAxisAlignment.spaceAround,
-                                    children: <Widget>[
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                    child: new Text( '<<', style: new TextStyle( color: Colors.white ) ),
-                                                    onPressed: _incrementCounter,
-                                                    elevation: 5,
-                                                    color: BUTTON_COLOR,
-                                                    disabledColor: Colors.grey
-                                                    ) ),
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                        child: new Text( '-50', style: new TextStyle( color: Colors.white ) ),
-                                                        onPressed: _incrementCounter,
-                                                        color: BUTTON_COLOR,
-                                                        elevation: 5,
-                                                        ) ),
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                        child: new Text( '+50', style: new TextStyle( color: Colors.white ) ),
-                                                        onPressed: _incrementCounter,
-                                                        color: BUTTON_COLOR,
-                                                        elevation: 5,
-                                                        ) ),
-                                            
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                    child: new Text( '>>', style: new TextStyle( color: Colors.white ) ),
-                                                    onPressed: _incrementCounter,
-                                                    elevation: 5,
-                                                    color: BUTTON_COLOR,
-                                                    disabledColor: Colors.grey
-                                                    ) ),
-                                    ]
-                                    ),
-                                
-                                
-                                ButtonBar
-                                        (
-                                    alignment: MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
+                Widget browseButtonBar =
+                IntrinsicHeight ( child:
+                                  Column (
+                                          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          //mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                                  //IntrinsicWidth ( child:
+                                                  Row
+                                                          (
+                                                          //alignment: MainAxisAlignment.spaceAround,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                              children: <Widget>[
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                        
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '<<', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '-50', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '+50', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
                                                     
-                                                    child: new Text( '<', style: new TextStyle( color: Colors.white ) ),
-                                                    onPressed: _incrementCounter,
-                                                    elevation: 5,
-                                                    color: BUTTON_COLOR,
-                                                    disabledColor: Colors.grey
-                                                    ) ),
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                        child: new Text( '!', style: new TextStyle( color: Colors.white ) ),
-                                                        onPressed: _incrementCounter,
-                                                        color: BUTTON_COLOR,
-                                                        elevation: 5,
-                                                        ) ),
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                        child: new Text( 'Tag', style: new TextStyle( color: Colors.white ) ),
-                                                        onPressed: _incrementCounter,
-                                                        color: BUTTON_COLOR,
-                                                        elevation: 5,
-                                                        ) ),
-                                            
-                                            ButtonTheme (
-                                                minWidth: screenWidth ( context ) / 5.1,
-                                                height: BUTTON_HEIGHT,
-                                                child: RaisedButton (
-                                                    child: new Text( '>', style: new TextStyle( color: Colors.white ) ),
-                                                    onPressed: _incrementCounter,
-                                                    elevation: 5,
-                                                    color: BUTTON_COLOR,
-                                                    disabledColor: Colors.grey
-                                                    ) ),
-                                    ]
-                                    ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '>>', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                              ]
+                                                          //)
+                                                          ),
+                                
+                                
+                                                  //IntrinsicWidth ( child:
+                                                  Row
+                                                          (
+                                                          //alignment: MainAxisAlignment.spaceBetween,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                              //mainAxisSize: MainAxisSize.min,
+                                                              children: <Widget>[
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                            
+                                                                              child: new Text( '<', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '!', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( 'Tag', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                    
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 5.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '>', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                              ]
+                                                          ),
+                                                  //  )
                         
                         
-                        ],
-                        );
+                                          ]
+                                          ),
+                                  );
+                
+                
+                Widget teacherBrowseButtonBar =
+                IntrinsicHeight ( child:
+                                  Column (
+                                          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          //mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                                  //IntrinsicWidth ( child:
+                                                  Row
+                                                          (
+                                                          //alignment: MainAxisAlignment.spaceAround,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                              children: <Widget>[
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                        
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '+', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                    
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                        
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '<<', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '-50', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '+50', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                    
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '>>', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                              ]
+                                                          //)
+                                                          ),
+                                
+                                
+                                                  //IntrinsicWidth ( child:
+                                                  Row
+                                                          (
+                                                          //alignment: MainAxisAlignment.spaceBetween,
+                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                              //mainAxisSize: MainAxisSize.min,
+                                                              children: <Widget>[
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                        
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '-', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                            
+                                                                              child: new Text( '<', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( '!', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                                  child: new Text( 'Tag', style: new TextStyle( color: Colors.white ) ),
+                                                                                  onPressed: _incrementCounter,
+                                                                                  color: BUTTON_COLOR,
+                                                                                  elevation: 5,
+                                                                                  ) ),
+                                                    
+                                                                      ButtonTheme (
+                                                                          minWidth: screenWidth ( context ) / 6.1,
+                                                                          //minWidth: (screenWidth ( context ) - 5*GAP )/4,
+                                                                          height: BUTTON_HEIGHT,
+                                                                          child: RaisedButton (
+                                                                              child: new Text( '>', style: new TextStyle( color: Colors.white ) ),
+                                                                              onPressed: _incrementCounter,
+                                                                              elevation: 5,
+                                                                              color: BUTTON_COLOR,
+                                                                              disabledColor: Colors.grey
+                                                                              ) ),
+                                                              ]
+                                                          ),
+                                                  //  )
+                        
+                        
+                                          ]
+                                          ),
+                                  );
                 
                 
                 List<Widget> panels = [];
-                switch ( phase )
+                if ( mode == tMode.DEF )
                 {
-                        case tPhase.QUESTION:
-                                {
-                                        panels.add ( questionPanel ( ) );
-                                }
-                                break;
-                        
-                        case tPhase.ANSWER:
-                                {
-                                        panels.add ( questionPanel ( ) );
-                                        panels.add ( answerPanel );
-                                }
-                                break;
-                        
-                        case tPhase.PREVIOUS:
-                                {
-                                        panels.add ( questionPanel ( ) );
-                                        panels.add ( answerPanel );
-                                }
-                                break;
-                        
-                        case tPhase.BROWSE:
-                                {
-                                        //panels.add(browseButtonBar);
-                                        panels.add ( questionPanel ( ) );
-                                        panels.add ( answerPanel );
-                                }
-                                break;
+                        switch ( phase )
+                        {
+                                case tPhase.QUESTION:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( answerPanel );
+                                                panels.add ( examplesPanel ( ) );
+                                        }
+                                        break;
+                                
+                                case tPhase.ANSWER:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( answerPanel );
+                                                panels.add ( examplesPanel ( ) );
+                                                panels.add ( questionPanel ( ) );
+                                        }
+                                        break;
+                                
+                                case tPhase.PREVIOUS:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( answerPanel );
+                                                panels.add ( examplesPanel ( ) );
+                                                panels.add ( questionPanel ( ) );
+                                        }
+                                        break;
+                                
+                                case tPhase.BROWSE:
+                                        {
+                                                assert(false);
+                                        }
+                                        break;
+                        }
+                } else
+                {
+                        switch ( phase )
+                        {
+                                case tPhase.QUESTION:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( questionPanel ( ) );
+                                                panels.add ( examplesPanel ( ) );
+                                        }
+                                        break;
+                                
+                                case tPhase.ANSWER:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( questionPanel ( ) );
+                                                panels.add ( examplesPanel ( ) );
+                                                panels.add ( answerPanel );
+                                        }
+                                        break;
+                                
+                                case tPhase.PREVIOUS:
+                                        {
+                                                panels.add ( stacksPanel );
+                                                panels.add ( questionPanel ( ) );
+                                                panels.add ( examplesPanel ( ) );
+                                                panels.add ( answerPanel );
+                                        }
+                                        break;
+                                
+                                case tPhase.BROWSE:
+                                        {
+                                                //panels.add(browseButtonBar);
+                                                panels.add ( questionPanel ( ) );
+                                                panels.add ( examplesPanel ( ) );
+                                                panels.add ( answerPanel );
+                                        }
+                                        break;
+                        }
                 }
+                
                 
                 Widget myButtonBar ( )
                 {
@@ -443,7 +885,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                                         return previousButtonBar;
                                         break;
                                 case tPhase.BROWSE:
-                                        return browseButtonBar;
+                                        return teacherMode ( ) ? teacherBrowseButtonBar : browseButtonBar;
                                         break;
                         }
                         return null;
@@ -451,88 +893,45 @@ class _DgltMainPageState extends State<DgltMainPage>
                 
                 return Scaffold
                         (
-                        backgroundColor: BACKGROUND_COLOR,
-                        appBar: AppBar
-                                (
-                                // Here we take the value from the MyHomePage object that was created by
-                                // the App.build method, and use it to set our appbar title.
-                                title: Text ( phase != tPhase.BROWSE ? 'Average ${score ( )}%' : 'Browse Mode ($cardNo/$totalCards)' /*widget.title*/ ),
-                                ),
-                        
-                        bottomNavigationBar: myButtonBar ( ),
-/*
-                        bottomNavigationBar: BottomNavigationBar
-                        (
-                            items: <BottomNavigationBarItem>
-                                [
-                                        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-                                        BottomNavigationBarItem(icon: Icon(Icons.business), title: Text('Business')),
-                                        BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('School')),
-                                ],
-                                currentIndex: 1,
-                                fixedColor: Colors.blue,
-                                onTap: _onItemTapped,
-        
-                        ),
-*/
-                        body:
-                        
-                        ///Center //Column
-                        ///(
-                        // Center is a layout widget. It takes a single child and positions it
-                        // in the middle of the parent.
-                        
-                        ///child: Column
-                        //children: <Widget>
-                        Column
-                                (
-                                // Column is also layout widget. It takes a list of children and
-                                // arranges them vertically. By default, it sizes itself to fit its
-                                // children horizontally, and tries to be as tall as its parent.
-                                //
-                                // Invoke "debug painting" (press "p" in the console, choose the
-                                // "Toggle Debug Paint" action from the Flutter Inspector in Android
-                                // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-                                // to see the wireframe for each widget.
-                                //
-                                // Column has various properties to control how it sizes itself and
-                                // how it positions its children. Here we use mainAxisAlignment to
-                                // center the children vertically; the main axis here is the vertical
-                                // axis because Columns are vertical (the cross axis would be
-                                // horizontal).
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: panels,
-                                
-                                //                                        children: <Widget>
-                                //                                        [
-                                //                                                question,
-                                //                                                answer,
-                                //
-                                //
-                                //                                //),
-                                //
-                                //                                                Text ( 'The fucking plume', ),
-                                //
-                                //                                                Text
-                                //                                                        (
-                                //                                                        '$_counter',
-                                //                                                        style: Theme
-                                //                                                            .of ( context )
-                                //                                                            .textTheme
-                                //                                                            .display1,
-                                //                                                        ),
-                                //
-                                //                                                questionButtonBar,
-                                //
-                                //
-                                //
-                                //                                        ],
-                                ),
-                        //]
-                        //),
-                        
-                        
-                        );
-        }
+                    backgroundColor: BACKGROUND_COLOR,
+                    appBar: AppBar
+                            (
+                            // Here we take the value from the MyHomePage object that was created by
+                            // the App.build method, and use it to set our appbar title.
+                            title: Text ( phase != tPhase.BROWSE ? 'Average ${score ( )}%' : 'Browse Mode ($cardNo/$totalCards)' /*widget.title*/ ),
+                            ),
+                    
+                    bottomNavigationBar: myButtonBar ( ),
+                    body:
+                    
+                    Center //Column
+                            (
+                            // Center is a layout widget. It takes a single child and positions it
+                            // in the middle of the parent.
+                            
+                            ///child: Column
+                            //children: <Widget>
+                            child: Column
+                                    (
+                                    // Column is also layout widget. It takes a list of children and
+                                    // arranges them vertically. By default, it sizes itself to fit its
+                                    // children horizontally, and tries to be as tall as its parent.
+                                    //
+                                    // Invoke "debug painting" (press "p" in the console, choose the
+                                    // "Toggle Debug Paint" action from the Flutter Inspector in Android
+                                    // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+                                    // to see the wireframe for each widget.
+                                    //
+                                    // Column has various properties to control how it sizes itself and
+                                    // how it positions its children. Here we use mainAxisAlignment to
+                                    // center the children vertically; the main axis here is the vertical
+                                    // axis because Columns are vertical (the cross axis would be
+                                    // horizontal).
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: panels,
+                                    
+                                    
+                                    ) ) );
+        } // Build
 }

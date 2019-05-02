@@ -16,12 +16,15 @@
 
 import 'package:flutter/material.dart';
 
-const BACKGROUND_COLOR = Colors.deepPurple;
+const BACKGROUND_COLOR = Colors.blue;
 const BUTTON_COLOR = Colors.blue;
-const PANEL_COLOR = Colors.blue[200];
+final PANEL_COLOR = Colors.blue[100];
 const BUTTON_HEIGHT = 30.0;
 
+const GAP = 3;
+
 enum tCardType { UNTESTED, NEW, RECENT, OLDER, ANCIENT }
+var nbrStackCards = [1328,30,53,10,3];
 
 enum tPhase { QUESTION, ANSWER, PREVIOUS, BROWSE }
 tPhase phase = tPhase.QUESTION;
@@ -31,7 +34,7 @@ tMode mode = tMode.TEST;
 
 
 enum tStudent { TEACHER, DAVE, JOE, RICK, DOUG, MIKE, RICHARD, LINUS, NIKLAUS, ALAN, ANDERS }
-tStudent student = tStudent.DAVE;
+tStudent student = tStudent.ALAN;
 
 bool teacherMode() => (student == tStudent.TEACHER);
 
