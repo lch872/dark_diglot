@@ -16,9 +16,10 @@
 
 import 'package:flutter/material.dart';
 
-const BACKGROUND_COLOR = Colors.blue;
+const BACKGROUND_COLOR = Colors.deepPurple;
 const BUTTON_COLOR = Colors.blue;
 final PANEL_COLOR = Colors.blue[100];
+final FRAME_COLOR = Colors.indigo[900];
 const BUTTON_HEIGHT = 30.0;
 
 const GAP = 3;
@@ -34,7 +35,7 @@ tMode mode = tMode.TEST;
 
 
 enum tStudent { TEACHER, DAVE, JOE, RICK, DOUG, MIKE, RICHARD, LINUS, NIKLAUS, ALAN, ANDERS }
-tStudent student = tStudent.ALAN;
+tStudent student = tStudent.TEACHER;
 
 bool teacherMode() => (student == tStudent.TEACHER);
 

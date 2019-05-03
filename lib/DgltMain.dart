@@ -86,7 +86,7 @@ class _DgltMainPageState extends State<DgltMainPage>
         
         bool isChkPanelVisible ( )
         {
-                return false;
+                return true;
         }
         
         
@@ -112,6 +112,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                         //width: 120,
                         //height: 30,
                         //constraints: BoxConstraints.expand(),
+                        
                         child: new Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
@@ -205,6 +206,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                 {
                         return Container
                                 (
+                                
                                 //width: 300,
                                 height:
                                 100
@@ -215,7 +217,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                                                 (
                                                 border: new Border.all
                                                         (
-                                                    color: Colors.indigo[900],
+                                                    color: FRAME_COLOR,
                                                     width: 5.0,
                                                     style: BorderStyle.solid
                                                     ),
@@ -245,94 +247,152 @@ class _DgltMainPageState extends State<DgltMainPage>
                                                 ),
                                         
                                         child:
-
-
-
-
-
-
-//                                        ConstrainedBox(
-//                                                constraints: BoxConstraints(
-//                                                        minWidth: double.infinity,
-//                                                        maxWidth: double.infinity,
-//                                                        minHeight: double.infinity,
-//                                                        maxHeight: double.infinity,
-//                                                        ),
-//                                                child:
-        
-        
-        
-        
-        
-                                Row (
+                                        
+                                        
+                                        Row (
                                                 
                                                 
                                                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                       // mainAxisSize: MainAxisSize.max,
-                                                        //crossAxisAlignment: CrossAxisAlignment.stretch,
-                                                        children: <Widget>
-                                                        [
+                                                // mainAxisSize: MainAxisSize.max,
+                                                //crossAxisAlignment: CrossAxisAlignment.stretch,
+                                                children: <Widget>
+                                                [
+                                                        
+                                                        
+                                                        Expanded ( child:
+                                                                   Column ( // La colonne de gauche
+                                                                            children: <Widget>[
+                                                                
+                                                                
+                                                                                    Expanded ( child:
+                                                                                               Row (
+                                                                                                   children: <Widget>[ // la premiere ligne de la colonne de gauche
+                                                                            
+                                                                                                           Expanded ( // Word
+                                                                                                                      child: Container (
+                                                                                                                              margin: const EdgeInsets.all( 5 ),
+                                                                                                                              decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                                              child: Center (
+                                                                                                                                  child: Text ( 'Word', style: new TextStyle( fontSize: 30, color: Colors.black ) ) ),
+                                                                                                                              ),
+                                                                                                                              flex: 1,
+                                                                                                                      ),
+                                                                            
+                                                                            
+                                                                                                           Container (
+                                                                                                                   margin: const EdgeInsets.all( 5 ),
+                                                                                                                   width: 40,
+                                                                                                                   decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                                   child: Center ( child: Text ( 'Gram', style: new TextStyle( fontSize: 12, color: Colors.black ) ) ),
+                                                                                                                   )
+                                                                    
+                                                                    
+                                                                                                   ] ),
+                                                                                                       flex: 1,
+                                                                
+                                                                                               ),
+                                                                
+                                                                
+                                                                                    Expanded ( child:
+                                                                                               Row (
+                                                                                                   children: <Widget>[ // la premiere ligne de la colonne de gauche
+                                                                            
+                                                                                                           Expanded ( // Word
+                                                                                                                      child: Container (
+                                                                                                                              margin: const EdgeInsets.all( 5 ),
+                                                                                                                              decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                                              child: Center (
+                                                                                                                                  child: Text ( 'Hanja', style: new TextStyle( fontSize: 30, color: Colors.red ) ) ),
+                                                                                                                              ),
+                                                                                                                              flex: 1,
+                                                                                                                      ),
 
 
+//                                                                                                           Container (
+//                                                                                                                   margin: const EdgeInsets.all( 5 ),
+//                                                                                                                   width: 40,
+//                                                                                                                   decoration: const BoxDecoration( color: Colors.white ),
+//                                                                                                                   child: Center ( child: Text ( 'Play' ) ),
+//                                                                                                                   )
+        
+                                                                                                           teacherMode ( ) ? Container (
+                                                                                                               width: 40,
+                                                                                                               margin: const EdgeInsets.all( 5 ),
+                                                                                                               //decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                               child:
 
 
-
-                               // ConstrainedBox(
-                                                  //constraints: BoxConstraints(
-                                                          //maxWidth: double.infinity,
-                                                          //minWidth: double.infinity,
-                                                       //minWidth: 400.0,
-                                                       //maxWidth: 400.0,
-//                                                        //minHeight: double.infinity,
-//                                                        //maxHeight: double.infinity,
-                                                                // ),
-                                                               // child:
+//                                                                                                                        ButtonTheme (
+//                                                                                                                        //minWidth: 40,
+//                                                                                                                        //height: BUTTON_HEIGHT,
+//                                                                                                                        child:
+//                                                                                                                        RaisedButton (
+//                                                                                                                        child: new Text( 'Play', style: new TextStyle(fontSize: 10, color: Colors.white ) ),
+//                                                                                                                                onPressed: _incrementCounter,
+//                                                                                                                       color: BUTTON_COLOR,
+//                                                                                                                       elevation: 5,
+//                                                                                                                        ))
+                                                                                                               IconButton (
+                                                                                                                       icon: Icon ( Icons.voicemail ),
+                                                                                                                       color:Colors.red,
+                                                                                                                       tooltip: 'Record vocal audio',
+                                                                                                                       onPressed: _incrementCounter,
+                                                                                                                       )
+            
+                                                                                                               //
+                                                                                                               )
+                                                                                                           : const SizedBox( ),
         
         
-        
-        
-                        //ConstrainedBox(
-                                                //constraints: BoxConstraints.expand(), child: Center( child:
-                                                                Expanded( child:
-                                                Column (
-                                                        children: <Widget>[
-                                                                Expanded(
-                                                                        child: Container(
-                                                                                decoration: const BoxDecoration(color: Colors.red),
-                                                                                ),
-                                                                        flex: 1,
-                                                                        ),
-                                                                Expanded(
-                                                                        child: Container(
-                                                                                decoration: const BoxDecoration(color: Colors.green),
-                                                                                ),
-                                                                        flex: 1,
-                                                                        ),
-                                                                Expanded(
-                                                                        child: Container(
-                                                                                decoration: const BoxDecoration(color: Colors.blue),
-                                                                                ),
-                                                                        flex: 1,
-                                                                        ),
-                                                        ],
-                                                        ///)),
-                                ),
-                                                        ),
-                                                                isChkPanelVisible ( )
-                                                                ? chkPanel
-                                                                : const SizedBox( ),
+                                                                                                           Container (
+                                                                                                               width: 40,
+                                                                                                               margin: const EdgeInsets.all( 5 ),
+                                                                                                               //decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                               child:
 
-                                                        ],
+
+//                                                                                                                        ButtonTheme (
+//                                                                                                                        //minWidth: 40,
+//                                                                                                                        //height: BUTTON_HEIGHT,
+//                                                                                                                        child:
+//                                                                                                                        RaisedButton (
+//                                                                                                                        child: new Text( 'Play', style: new TextStyle(fontSize: 10, color: Colors.white ) ),
+//                                                                                                                                onPressed: _incrementCounter,
+//                                                                                                                       color: BUTTON_COLOR,
+//                                                                                                                       elevation: 5,
+//                                                                                                                        ))
+                                                                                                               IconButton (
+                                                                                                                       color:Colors.black,
+                                                                                                                       onPressed: _incrementCounter,
+                                                                                                                       icon: Icon ( Icons.volume_up ),
+                                                                                                                       tooltip: 'Play vocal audio',
+                                                                                                                       )
+                                                                                
+                                                                                                               //
+                                                                                                               ),
+                                                                 
+                                                                    
+                                                                                                   ] ),
+                                                                                                       flex: 1,
+                                                                
+                                                                                               ),
+                                                        
+                                                        
+                                                                            ],
+                                                        
+                                                                            ),
+                                                                   ),
+                                                        
+                                                        
+                                                        isChkPanelVisible ( )
+                                                        ? chkPanel
+                                                        : const SizedBox( ),
                                                 
-                        
-                        
-                        
-                                                )
-                                        
-                                        
-                                        ///const Text( 'Question', textAlign: TextAlign.center
-                                        /// )
-                                        ,
+                                                ],
+                                                
+                                                
+                                                ),
+                                
                                 );
                 }
                 
@@ -351,7 +411,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                                                 (
                                                 border: new Border.all
                                                         (
-                                                    color: Colors.blue[900],
+                                                    color: FRAME_COLOR,
                                                     width: 5.0,
                                                     style: BorderStyle.solid
                                                     ),
@@ -380,9 +440,139 @@ class _DgltMainPageState extends State<DgltMainPage>
                                                 
                                                 ),
                                         
-                                        child: const Text( 'Examples', textAlign: TextAlign.center
-                                                           )
-                                        ,
+                                        child:
+                                        Column ( // La colonne de gauche
+                                                 children: <Widget>[
+        
+        
+                                                         Expanded ( child:
+                                                                    Row (
+                                                                        children: <Widget>[ // la premiere ligne de la colonne de gauche
+                    
+                                                                                Expanded ( // Word
+                                                                                           child: Container (
+                                                                                                   margin: const EdgeInsets.all( 5 ),
+                                                                                                   decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                   child: Center (
+                                                                                                       child: Text ( 'Word', style: new TextStyle( fontSize: 30, color: Colors.black ) ) ),
+                                                                                                   ),
+                                                                                                   flex: 1,
+                                                                                           ),
+                    
+                    
+                                                                                Container (
+                                                                                        margin: const EdgeInsets.all( 5 ),
+                                                                                        width: 40,
+                                                                                        decoration: const BoxDecoration( color: Colors.white ),
+                                                                                        child: Center ( child: Text ( 'Gram', style: new TextStyle( fontSize: 12, color: Colors.black ) ) ),
+                                                                                        )
+            
+            
+                                                                        ] ),
+                                                                            flex: 1,
+        
+                                                                    ),
+                                                         ConstrainedBox(
+                                                                 constraints: BoxConstraints(
+                                                                         minHeight: 5,
+                                                                         maxHeight: 5,
+                                                                         ),
+                                                                 child: Container(
+                                                                         color: FRAME_COLOR,
+                                                                         ),
+                                                                 ),
+        
+                                                         Expanded ( child:
+                                                                    Row (
+                                                                        children: <Widget>[ // la premiere ligne de la colonne de gauche
+                    
+                                                                                Expanded ( // Word
+                                                                                           child: Container (
+                                                                                                   margin: const EdgeInsets.all( 5 ),
+                                                                                                   decoration: const BoxDecoration( color: Colors.white ),
+                                                                                                   child: Center (
+                                                                                                       child: Text ( 'Hanja', style: new TextStyle( fontSize: 30, color: Colors.red ) ) ),
+                                                                                                   ),
+                                                                                                   flex: 1,
+                                                                                           ),
+
+
+//                                                                                                           Container (
+//                                                                                                                   margin: const EdgeInsets.all( 5 ),
+//                                                                                                                   width: 40,
+//                                                                                                                   decoration: const BoxDecoration( color: Colors.white ),
+//                                                                                                                   child: Center ( child: Text ( 'Play' ) ),
+//                                                                                                                   )
+                    
+                                                                                teacherMode ( ) ? Container (
+                                                                                    width: 40,
+                                                                                    margin: const EdgeInsets.all( 5 ),
+                                                                                    //decoration: const BoxDecoration( color: Colors.white ),
+                                                                                    child:
+
+
+//                                                                                                                        ButtonTheme (
+//                                                                                                                        //minWidth: 40,
+//                                                                                                                        //height: BUTTON_HEIGHT,
+//                                                                                                                        child:
+//                                                                                                                        RaisedButton (
+//                                                                                                                        child: new Text( 'Play', style: new TextStyle(fontSize: 10, color: Colors.white ) ),
+//                                                                                                                                onPressed: _incrementCounter,
+//                                                                                                                       color: BUTTON_COLOR,
+//                                                                                                                       elevation: 5,
+//                                                                                                                        ))
+                                                                                    IconButton (
+                                                                                            icon: Icon ( Icons.voicemail ),
+                                                                                            color:Colors.red,
+                                                                                            tooltip: 'Record vocal audio',
+                                                                                            onPressed: _incrementCounter,
+                                                                                            )
+                        
+                                                                                    //
+                                                                                    )
+                                                                                : const SizedBox( ),
+                    
+                    
+                                                                                Container (
+                                                                                    width: 40,
+                                                                                    margin: const EdgeInsets.all( 5 ),
+                                                                                    //decoration: const BoxDecoration( color: Colors.white ),
+                                                                                    child:
+
+
+//                                                                                                                        ButtonTheme (
+//                                                                                                                        //minWidth: 40,
+//                                                                                                                        //height: BUTTON_HEIGHT,
+//                                                                                                                        child:
+//                                                                                                                        RaisedButton (
+//                                                                                                                        child: new Text( 'Play', style: new TextStyle(fontSize: 10, color: Colors.white ) ),
+//                                                                                                                                onPressed: _incrementCounter,
+//                                                                                                                       color: BUTTON_COLOR,
+//                                                                                                                       elevation: 5,
+//                                                                                                                        ))
+                                                                                    IconButton (
+                                                                                            color:Colors.black,
+                                                                                            onPressed: _incrementCounter,
+                                                                                            icon: Icon ( Icons.volume_up ),
+                                                                                            tooltip: 'Play vocal audio',
+                                                                                            )
+                        
+                                                                                    //
+                                                                                    ),
+            
+            
+                                                                        ] ),
+                                                                            flex: 1,
+        
+                                                                    ),
+
+
+                                                 ],
+
+                                                 ),
+    
+    
+                                    
                                 );
                 }
                 
@@ -398,7 +588,7 @@ class _DgltMainPageState extends State<DgltMainPage>
                                         (
                                         border: new Border.all
                                                 (
-                                            color: Colors.blue[900],
+                                            color: FRAME_COLOR,
                                             width: 5.0,
                                             style: BorderStyle.solid
                                             ),
