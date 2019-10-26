@@ -16,7 +16,7 @@ Diglot is a Free and Open-Source 'App' that can run on :
 
 Unfortunately  Diglot cannot run on Linux, right now :-( .
 
-Diglot is published under the GNU General Public License v3.0 (GPL3). The sources can be got on https://github.com/Canardoux/diglot.
+Diglot is published under the GNU General Public License v3.0 (GPL3). The sources can be got on [Github](https://github.com/Canardoux/dark_diglot).
 
 The purpose of Diglot is to test and improve the vocabulary knowledge of a user, for his foreign language.
 
