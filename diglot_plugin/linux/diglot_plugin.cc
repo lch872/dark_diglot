@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-#include "example_plugin.h"
+#include "diglot_plugin.h"
 
 #include <flutter/method_channel.h>
 #include <flutter/plugin_registrar.h>
@@ -46,7 +46,7 @@ class ExamplePlugin : public flutter::Plugin {
 void ExamplePlugin::RegisterWithRegistrar(flutter::PluginRegistrar *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "example_plugin",
+          registrar->messenger(), "diglot_plugin",
           &flutter::StandardMethodCodec::GetInstance());
   auto *channel_pointer = channel.get();
 

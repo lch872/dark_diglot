@@ -2,11 +2,11 @@
 //  Generated file. Do not edit.
 //
 
-#include "generated_diglot_registrant.h"
+#include "generated_plugin_registrant.h"
 
 #include <diglot_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  ExamplePluginRegisterWithRegistrar(
+  DiglotPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("DiglotPlugin"));
 }

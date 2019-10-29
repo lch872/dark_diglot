@@ -39,9 +39,9 @@ flutter:
       macos:
         pluginClass: DiglotPlugin
       linux:
-        pluginClass: ExamplePlugin
+        pluginClass: DiglotPlugin
       windows:
-        pluginClass: ExamplePlugin
+        pluginClass: DiglotPlugin
 
 
   # To add assets to your plugin package, add an assets section, like this:
