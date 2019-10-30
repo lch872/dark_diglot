@@ -21,7 +21,7 @@
 # Flutter/Dart/Pub related
 **/doc/api/
 .dart_tool/
-.flutter-plugins
+.flutter-plugins/der
 .packages
 .pub-cache/
 .pub/
@@ -61,6 +61,9 @@
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+
+# Macos related
+**/macos/DerivedData/
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
