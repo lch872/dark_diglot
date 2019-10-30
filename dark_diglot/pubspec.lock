@@ -67,7 +67,7 @@ packages:
   diglot_plugin:
     dependency: "direct main"
     description:
-      path: "../diglot_plugin"
+      path: "..\\diglot_plugin"
       relative: true
     source: path
     version: "0.0.1"
