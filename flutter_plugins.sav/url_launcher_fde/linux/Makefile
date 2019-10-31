@@ -12,25 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ====================
-# Core variables. To modify this Makefile for a different plugin, these are
-# the values that are mostly likely to need to be changed.
-
 # The name of the plugin.
 # The primary source file is assumed to be $(PLUGIN_NAME).cc, with
 # $(PLUGIN_NAME).h as the public header meant for inclusion by the application.
-PLUGIN_NAME=diglot_plugin
+PLUGIN_NAME=url_launcher_plugin
 # Any files other than the plugin class files that need to be compiled.
 EXTRA_SOURCES=
 # Extra flags (e.g., for library dependencies).
+SYSTEM_LIBRARIES=
 EXTRA_CXXFLAGS=
 EXTRA_CPPFLAGS=
 EXTRA_LDFLAGS=
-
-# Patch [LARPOUX]
-FLUTTER_EPHEMERAL_DIR=flutter/ephemeral
-
-# ====================
 
 # Default build type. For a release build, set BUILD=release.
 # Currently this only sets NDEBUG, which is used to control the flags passed

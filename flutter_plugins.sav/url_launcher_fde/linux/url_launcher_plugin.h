@@ -11,8 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-#ifndef PLUGINS_EXAMPLE_LINUX_EXAMPLE_PLUGIN_H_
-#define PLUGINS_EXAMPLE_LINUX_EXAMPLE_PLUGIN_H_
+#ifndef PLUGINS_FLUTTER_PLUGINS_URL_LAUNCHER_FDE_LINUX_URL_LAUNCHER_FDE_PLUGIN_H_
+#define PLUGINS_FLUTTER_PLUGINS_URL_LAUNCHER_FDE_LINUX_URL_LAUNCHER_FDE_PLUGIN_H_
+
+// A plugin to control a native menubar.
 
 #include <flutter_plugin_registrar.h>
 
@@ -26,11 +28,11 @@
 extern "C" {
 #endif
 
-FLUTTER_PLUGIN_EXPORT void DiglotPluginRegisterWithRegistrar(
+FLUTTER_PLUGIN_EXPORT void UrlLauncherPluginRegisterWithRegistrar(
     FlutterDesktopPluginRegistrarRef registrar);
 
 #if defined(__cplusplus)
 }  // extern "C"
 #endif
 
-#endif  // PLUGINS_EXAMPLE_LINUX_EXAMPLE_PLUGIN_H_
+#endif  // PLUGINS_FLUTTER_PLUGINS_URL_LAUNCHER_FDE_LINUX_URL_LAUNCHER_FDE_PLUGIN_H_

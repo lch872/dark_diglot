@@ -25,7 +25,7 @@ EXTRA_CPPFLAGS=
 EXTRA_LDFLAGS=
 
 # The location of the flutter-desktop-embedding repository.
-FDE_ROOT=$(CURDIR)/../..
+FDE_ROOT=$(CURDIR)/../../..
 # Plugins to include from the flutter-desktop-embedding plugins/ directory.
 PLUGIN_NAMES=diglot_plugin
 # Additional plugins to include from the plugins/flutter_plugins subdirectory.

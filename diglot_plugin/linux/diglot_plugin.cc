@@ -22,15 +22,15 @@
 
 namespace {
 
-class ExamplePlugin : public flutter::Plugin {
+class DiglotPlugin : public flutter::Plugin {
  public:
   static void RegisterWithRegistrar(flutter::PluginRegistrar *registrar);
 
   // Creates a plugin that communicates on the given channel.
-  ExamplePlugin(
+  DiglotPlugin(
       std::unique_ptr<flutter::MethodChannel<flutter::EncodableValue>> channel);
 
-  virtual ~ExamplePlugin();
+  virtual ~DiglotPlugin();
 
  private:
   // Called when a method is called on |channel_|;
@@ -43,14 +43,14 @@ class ExamplePlugin : public flutter::Plugin {
 };
 
 // static
-void ExamplePlugin::RegisterWithRegistrar(flutter::PluginRegistrar *registrar) {
+void DiglotPlugin::RegisterWithRegistrar(flutter::PluginRegistrar *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
           registrar->messenger(), "diglot_plugin",
           &flutter::StandardMethodCodec::GetInstance());
   auto *channel_pointer = channel.get();
 
-  auto plugin = std::make_unique<ExamplePlugin>(std::move(channel));
+  auto plugin = std::make_unique<DiglotPlugin>(std::move(channel));
 
   channel_pointer->SetMethodCallHandler(
       [plugin_pointer = plugin.get()](const auto &call, auto result) {
@@ -60,13 +60,13 @@ void ExamplePlugin::RegisterWithRegistrar(flutter::PluginRegistrar *registrar) {
   registrar->AddPlugin(std::move(plugin));
 }
 
-ExamplePlugin::ExamplePlugin(
+DiglotPlugin::DiglotPlugin(
     std::unique_ptr<flutter::MethodChannel<flutter::EncodableValue>> channel)
     : channel_(std::move(channel)) {}
 
-ExamplePlugin::~ExamplePlugin(){};
+DiglotPlugin::~DiglotPlugin(){};
 
-void ExamplePlugin::HandleMethodCall(
+void DiglotPlugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
@@ -83,11 +83,11 @@ void ExamplePlugin::HandleMethodCall(
 
 }  // namespace
 
-void ExamplePluginRegisterWithRegistrar(
+void DiglotPluginRegisterWithRegistrar(
     FlutterDesktopPluginRegistrarRef registrar) {
   // The plugin registrar owns the plugin, registered callbacks, etc., so must
   // remain valid for the life of the application.
   static auto *plugin_registrar = new flutter::PluginRegistrar(registrar);
 
-  ExamplePlugin::RegisterWithRegistrar(plugin_registrar);
+  DiglotPlugin::RegisterWithRegistrar(plugin_registrar);
 }
