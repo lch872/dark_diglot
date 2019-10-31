@@ -31,6 +31,7 @@ PLUGIN_NAMES=diglot_plugin
 # Additional plugins to include from the plugins/flutter_plugins subdirectory.
 # Do not include the _fde suffix.
 FLUTTER_PLUGIN_NAMES=url_launcher
+#FLUTTER_PLUGIN_NAMES=
 
 
 # Default build type. For a release build, set BUILD=release.
@@ -74,7 +75,7 @@ FLUTTER_PLUGINS_DIR=$(PLUGINS_DIR)/flutter_plugins
 # The name of each plugin library is the name of its directory with _plugin
 # appended. The exception is example_plugin (to avoid confusion with the
 # top-level example/ directory), so it's added here separately.
-PLUGIN_LIB_NAMES=$(foreach plugin,$(PLUGIN_NAMES) $(FLUTTER_PLUGIN_NAMES),$(plugin)_plugin)
+PLUGIN_LIB_NAMES=$(foreach plugin,$(PLUGIN_NAMES) $(FLUTTER_PLUGIN_NAMES),$(plugin)_plugin) 
 PLUGIN_LIBS=$(foreach plugin,$(PLUGIN_LIB_NAMES),$(OUT_DIR)/lib$(plugin).so)
 EXTRA_BUNDLED_LIBRARIES+=$(PLUGIN_LIBS)
 EXTRA_LDFLAGS+=$(patsubst %,-l%,$(PLUGIN_LIB_NAMES))
@@ -152,16 +153,16 @@ $(WRAPPER_SOURCES) $(FLUTTER_LIB) $(ICU_DATA_SOURCE) $(FLUTTER_ASSETS_SOURCE) \
 	$(PLUGIN_NAMES) $(FLUTTER_PLUGIN_NAMES): | sync
 
 # Implicit rules won't match phony targets, so list plugin builds explicitly.
-$(OUT_DIR)/libdiglot_plugin_plugin.so: | diglot_plugin
-$(OUT_DIR)/liburl_launcher_plugin.so: | url_launcher
+$(OUT_DIR)/libdiglot_plugin.so: | diglot_plugin
+$(OUT_DIR)/liburl_launcher.so: | url_launcher
 
 # Compilation depends on plugin headers that are copied as part of the
 # plugin builds, so ensure those happen first.
 # TODO: Restructure to avoid the need for this.
 $(OBJ_FILES) : | $(EXTRA_BUNDLED_LIBRARIES)
 
-.PHONY: $(PLUGIN_NAMES)
-$(PLUGIN_NAMES) :
+.PHONY: $(PLUGIN_NAMES) 
+$(PLUGIN_NAMES):
 	make -C $(PLUGINS_DIR)/$@/linux \
 		OUT_DIR=$(OUT_DIR) \
 		FLUTTER_EPHEMERAL_DIR="$(abspath $(FLUTTER_EPHEMERAL_DIR))"

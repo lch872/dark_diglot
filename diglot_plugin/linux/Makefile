@@ -53,7 +53,7 @@ OBJ_DIR=$(PLUGIN_OUT_DIR)/obj/$(BUILD)
 
 # Flutter library
 FLUTTER_LIB_NAME=flutter_linux_glfw
-FLUTTER_LIB=$(FLUTTER_EPHEMERAL_DIR)/lib$(FLUTTER_LIB_NAME).so
+FLUTTER_LIB=$(FLUTTER_EPHEMERAL_DIR)/lib$(FLUTTER_LIB_NAME)_plugin.so
 
 # Add relevant code from the wrapper library, which is intended to be statically
 # built into the plugin.
@@ -85,7 +85,7 @@ CPPFLAGS=$(patsubst %,-I%,$(INCLUDE_DIRS)) $(EXTRA_CPPFLAGS)
 LDFLAGS=-shared -L$(FLUTTER_EPHEMERAL_DIR) -l$(FLUTTER_LIB_NAME) $(EXTRA_LDFLAGS)
 
 # Final output files that will be used by applications.
-LIBRARY_OUT=$(OUT_DIR)/lib$(PLUGIN_NAME).so
+LIBRARY_OUT=$(OUT_DIR)/lib$(PLUGIN_NAME)_plugin.so
 HEADER_OUT=$(OUT_DIR)/include/$(PUBLIC_HEADER)
 
 # Intermediate files.
