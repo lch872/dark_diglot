@@ -2,18 +2,95 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "LaunchImage.png",
+      "filename" : "LaunchImage-414x896-1.png",
+      "display-gamut" : "sRGB",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LaunchImage@2x.png",
+      "filename" : "LaunchImage-414x896-3.png",
+      "display-gamut" : "display-P3",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage-828x1792-1.png",
+      "display-gamut" : "sRGB",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LaunchImage@3x.png",
+      "filename" : "LaunchImage-828x1792-3.png",
+      "display-gamut" : "display-P3",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage-1242x2688-1.png",
+      "display-gamut" : "sRGB",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage-1242x2688-3.png",
+      "display-gamut" : "display-P3",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-414x896-2.png",
+      "display-gamut" : "sRGB",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-414x896-4.png",
+      "display-gamut" : "display-P3",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-828x1792-2.png",
+      "display-gamut" : "sRGB",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-828x1792-4.png",
+      "display-gamut" : "display-P3",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-1242x2688-2.png",
+      "display-gamut" : "sRGB",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "LaunchImage-1242x2688-4.png",
+      "display-gamut" : "display-P3",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "display-gamut" : "sRGB"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "display-gamut" : "display-P3"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "display-gamut" : "sRGB"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "display-gamut" : "display-P3"
     }
   ],
   "info" : {

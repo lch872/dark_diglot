@@ -1,70 +1,52 @@
-import 'dart:io';
+/* (main.dart)
+ *
+ * This file is part of Diglot.
+ *
+ * Diglot is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3, as published by
+ * the Free Software Foundation.
+ *
+ * Diglot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Diglot.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
 
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:flutter/services.dart';
+
 import 'package:diglot_plugin/diglot_plugin.dart';
+import 'HomeForm.dart';
 
 // Sets a platform override for desktop to avoid exceptions. See
 // https://flutter.dev/desktop#target-platform-override for more info.
-void _enablePlatformOverrideForDesktop() {
-  if (!kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux)) {
-    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
-  }
+void _enablePlatformOverrideForDesktop ()
+{
+        if ( !kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux) )
+        {
+                debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+        }
 }
 
-void main() {
-  _enablePlatformOverrideForDesktop();
-  runApp(MyApp());
+void main ()
+{
+        _enablePlatformOverrideForDesktop ();
+        runApp ( DiglotApp () );
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await DiglotPlugin.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
-    );
-  }
+class DiglotApp extends StatelessWidget
+{
+        @override
+        Widget build(BuildContext context)
+        {
+                return new MaterialApp(
+                    home: new HomeForm());
+        }
 }
