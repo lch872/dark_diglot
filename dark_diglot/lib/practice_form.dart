@@ -1,4 +1,4 @@
-/* (HomeForm.dart)
+/* (practice_form.dart)
  *
  * This file is part of Diglot.
  *
@@ -44,18 +44,11 @@ class _PracticeForm extends State<PracticeForm>
                         (
                         appBar: AppBar
                                 (
-                                title: Text ("Second Route"),
+                                title: Text ('Practice'),
                                 ),
                         body: Center
                                 (
-                                child: RaisedButton
-                                        (
-                                        onPressed: ()
-                                        {
-                                                Navigator.pop (context);
-                                        },
-                                        child: Text ('Go back!'),
-                                        ),
+                                       child: Text('Practice Mode'),
                                 ),
                         );
         }

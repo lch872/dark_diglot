@@ -19,11 +19,10 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:flutter/services.dart';
 
-import 'package:diglot_plugin/diglot_plugin.dart';
-import 'HomeForm.dart';
+import 'package:dark_diglot/home_form.dart';
+import 'package:dark_diglot/practice_form.dart';
+import 'package:dark_diglot/globals.dart';
 
 // Sets a platform override for desktop to avoid exceptions. See
 // https://flutter.dev/desktop#target-platform-override for more info.
@@ -38,15 +37,57 @@ void _enablePlatformOverrideForDesktop ()
 void main ()
 {
         _enablePlatformOverrideForDesktop ();
-        runApp ( DiglotApp () );
+        runApp (DiglotApp ());
 }
 
 class DiglotApp extends StatelessWidget
 {
-        @override
-        Widget build(BuildContext context)
+        Route<dynamic> generateRoute (RouteSettings settings)
         {
-                return new MaterialApp(
-                    home: new HomeForm());
+                switch ( settings.name )
+                {
+                        case '/':
+                                return MaterialPageRoute
+                                        (
+                                    builder: (context)
+                                    => HomeForm ()
+                                    );
+
+                        case '/practice':
+                                return MaterialPageRoute
+                                        (
+                                    builder: (context)
+                                    => PracticeForm ()
+                                    );
+
+                        default:
+                                return MaterialPageRoute
+                                        (
+                                    builder: (context)
+                                    => HomeForm ()
+                                    );
+                }
+        }
+
+        @override
+        Widget build (BuildContext context)
+        {
+                return new MaterialApp
+                        (
+                        home: new HomeForm(),
+                        onGenerateRoute: generateRoute,
+                        initialRoute: "/",
+                        theme: ThemeData
+                                (
+                                primaryColor: DiglotColor,
+                                accentColor: Colors.black,
+                                buttonTheme: ButtonThemeData
+                                        (
+                                        buttonColor: ButtonColor,
+                                        shape: RoundedRectangleBorder (),
+                                        textTheme: ButtonTextTheme.accent,
+                                        ),
+                                ),
+                        );
         }
 }
