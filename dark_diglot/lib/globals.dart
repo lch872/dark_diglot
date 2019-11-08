@@ -17,11 +17,43 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:dark_diglot/home_form.dart';
+import 'package:dark_diglot/practice_form.dart';
 
 const DiglotColor = const Color(0xFF4d2d89);
-const BGColor = const Color(0xFF4d2d89);
+const BGColor =  DiglotColor;
 const ButtonColor = const Color(0xFFDEF0EC);
 const FrameColor = const Color(0xFF2F2376);
+const LabelColor =  Colors.amber;
 const double FrameWidth = 3;
 
-int radioValue1 = 0;
+enum t_MODE
+{
+        PRACTICE,
+        ALTERNATE,
+        ENGLISH,
+        BROWSE,
+        AUTO,
+}
+
+t_MODE Mode = t_MODE.PRACTICE;
+void setMode(t_MODE mode)
+{
+        theHomeForm.setState(() => Mode = mode);
+}
+
+
+
+enum t_PHASE
+{
+        QUESTION,
+        ANSWER,
+        PREVIOUS,
+}
+
+t_PHASE Phase = t_PHASE.QUESTION;
+void setPhase(t_PHASE phase)
+{
+        thePracticeForm.setState(() => Phase = phase);
+}
