@@ -91,6 +91,13 @@ flutter:
           weight: 700
         - asset: fonts/Roboto/Roboto-Black.ttf
           weight: 900
-          
+
+    - family:  DiglotFont
+      fonts:
+        - asset: fonts/candle.ttf
+        - asset: fonts/browse.ttf
+
+
   assets:
         - assets/images/
+

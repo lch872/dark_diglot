@@ -22,6 +22,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:dark_diglot/globals.dart';
+import 'package:dark_diglot/ui/diglot_font.dart';
+
 
 _PracticeForm thePracticeForm;
 
@@ -45,6 +47,7 @@ class _PracticeForm extends State<PracticeForm>
                 if ( Mode == t_MODE.BROWSE )
                         return;
 
+                screenPanels.add (Divider (color: BGColor, height: 5,));
                 screenPanels.add
                         (
                     Row (
@@ -53,71 +56,71 @@ class _PracticeForm extends State<PracticeForm>
                             [
                                     Container
                                             (
-                                            width: 50,
+                                            width: 60,
                                             child: Column
                                                     (
 
 
                                                     children:
                                                     [
-                                                            Text ('Untested', style: TextStyle (color: LabelColor, fontSize: 11),),
-                                                            Text ('907', style: TextStyle (color: Colors.white, fontSize: 11),),
+                                                            Text ('Untested', style: TextStyle (color: LabelColor, fontSize: 13),),
+                                                            Text ('907', style: TextStyle (color: Colors.white, fontSize: 13),),
                                                     ],
 
                                                     ),
                                             ),
                                     Container
                                             (
-                                            width: 50,
+                                            width: 60,
                                             child: Column
                                                     (
 
                                                     children:
                                                     [
-                                                            Text ('New', style: TextStyle (color: LabelColor, fontSize: 11),),
-                                                            Text ('30', style: TextStyle (color: Colors.white, fontSize: 11),),
+                                                            Text ('New', style: TextStyle (color: LabelColor, fontSize: 13),),
+                                                            Text ('30', style: TextStyle (color: Colors.white, fontSize: 13),),
                                                     ],
 
                                                     ),
                                             ),
                                     Container
                                             (
-                                            width: 50,
+                                            width: 60,
                                             child: Column
                                                     (
 
                                                     children:
                                                     [
-                                                            Text ('Recent', style: TextStyle (color: LabelColor, fontSize: 11),),
-                                                            Text ('50', style: TextStyle (color: Colors.white, fontSize: 11),),
+                                                            Text ('Recent', style: TextStyle (color: LabelColor, fontSize: 13),),
+                                                            Text ('50', style: TextStyle (color: Colors.white, fontSize: 13),),
                                                     ],
 
                                                     ),
                                             ),
                                     Container
                                             (
-                                            width: 50,
+                                            width: 60,
                                             child: Column
                                                     (
 
                                                     children:
                                                     [
-                                                            Text ('Older', style: TextStyle (color: LabelColor, fontSize: 11),),
-                                                            Text ('100', style: TextStyle (color: Colors.white, fontSize: 11),),
+                                                            Text ('Older', style: TextStyle (color: LabelColor, fontSize: 13),),
+                                                            Text ('100', style: TextStyle (color: Colors.white, fontSize: 13),),
                                                     ],
 
                                                     ),
                                             ),
                                     Container
                                             (
-                                            width: 50,
+                                            width: 60,
                                             child: Column
                                                     (
 
                                                     children:
                                                     [
-                                                            Text ('Ancient', style: TextStyle (color: LabelColor, fontSize: 11),),
-                                                            Text ('150', style: TextStyle (color: Colors.white, fontSize: 11),),
+                                                            Text ('Ancient', style: TextStyle (color: LabelColor, fontSize: 13),),
+                                                            Text ('150', style: TextStyle (color: Colors.white, fontSize: 13),),
                                                     ],
 
                                                     ),
@@ -135,82 +138,110 @@ class _PracticeForm extends State<PracticeForm>
                 List <Widget> firstRow = [];
                 firstRow.add
                         (
-                    Expanded
+                        Expanded
+                                (
+                                child: Container
+                                        (
+                                        //color: Colors.white,
+                                        margin: const EdgeInsets.all(1.5),
+                                                padding: const EdgeInsets.all(1.5),
+                                                decoration: BoxDecoration
+                                                        (
+                                                        color: Colors.white,
+                                                        border: Border.all (color: FrameColor, width: 1,),
+                                                        ),
+
+                                                child: Center (child: Text ('사용하다', style: TextStyle (color: Colors.black, fontSize: 28))),
+                                        ),
+                                ),
+                        );
+                firstRow.add (
+                    Container
                             (
-                            child: Center (child: Text ('사용하다', style: TextStyle (color: Colors.black, fontSize: 28))),
+                            color: Colors.white,
+                            margin: const EdgeInsets.all(1),
+                            padding: const EdgeInsets.all(1),
+                            //decoration: BoxDecoration
+                            //(
+                            //color: Colors.white,
+                            //border: Border.all (color: FrameColor, width: 1,),
+                            //),
+                            child: Text ('명'),
                             )
                     );
+                firstRow.add (SizedBox (width: 3.0),);
+                firstRow.add (
+                    Container
+                            (
+                            color: Colors.white,
+                            margin: const EdgeInsets.all(1),
+                            padding: const EdgeInsets.all(1),
+                            //decoration: BoxDecoration
+                            //(
+                            //color: Colors.white,
+                            //border: Border.all (color: FrameColor, width: 1,),
+                            //),
+                            child: Text ('대'),
+                            )
+                    );
+
+                firstRow.add (SizedBox (width: 3.0),);
+
                 firstRow.add
                         (
                         Container
                                 (
-                                margin: const EdgeInsets.all(0.1),
-                                padding: const EdgeInsets.all(0.1),
-                                decoration: BoxDecoration
-                                        (
-                                        color: Colors.white,
-                                        border: Border.all (color: FrameColor, width: 1,),
-                                        ),
-
+                                margin: const EdgeInsets.all(1),
+                                padding: const EdgeInsets.all(1),
+                                //decoration: BoxDecoration
+                                //(
                                 //color: Colors.white,
+                                //border: Border.all (color: FrameColor, width: 1,),
+                                //),
+
+                                color: Colors.white,
                                 child: Text ('Easy'),
                                 ),
                         );
-                firstRow.add (SizedBox (width: 3.0),);
-                firstRow.add (
-                    Container
-                            (
-                            //color: Colors.white,
-                            margin: const EdgeInsets.all(0.1),
-                                    padding: const EdgeInsets.all(0.1),
-                                    decoration: BoxDecoration
-                                            (
-                                            color: Colors.white,
-                                            border: Border.all (color: FrameColor, width: 1,),
-                                            ),
-                                    child: Text ('verb'),
-                            )
-                    );
-                firstRow.add (SizedBox (width: 3.0),);
-                firstRow.add (
-                    Container
-                            (
-                            //color: Colors.white,
-                            margin: const EdgeInsets.all(0.1),
-                                    padding: const EdgeInsets.all(0.1),
-                                    decoration: BoxDecoration
-                                            (
-                                            color: Colors.white,
-                                            border: Border.all (color: FrameColor, width: 1,),
-                                            ),
-                                    child: Text ('adj.'),
-                            )
-                    );
+
 
                 rows.add (Row (children: firstRow));
 
                 List <Widget> secondRow = [];
                 secondRow.add
                         (
-                    Expanded
-                            (
-                            child: Center (child: Text ('書', style: TextStyle (color: Colors.black, fontSize: 28))),
-                            )
-                    );
+                        Expanded
+                                (
+                                child: Container
+                                        (
+                                        //color: Colors.white,
+                                        margin: const EdgeInsets.all(1.5),
+                                                padding: const EdgeInsets.all(1.5),
+                                                decoration: BoxDecoration
+                                                        (
+                                                        color: Colors.white,
+                                                        border: Border.all (color: FrameColor, width: 1,),
+                                                        ),
+
+
+                                                child: Center (child: Text ('書', style: TextStyle (color: Colors.black, fontSize: 28),),),
+                                        ),
+                                ),
+                        );
                 secondRow.add
                         (
                         Container
                                 (
                                 margin: const EdgeInsets.all(0.1),
                                 padding: const EdgeInsets.all(0.1),
-                                decoration: BoxDecoration
-                                        (
-                                        color: Colors.white,
-                                        border: Border.all (color: FrameColor, width: 1,),
-                                        ),
-
+                                //decoration: BoxDecoration
+                                //(
                                 //color: Colors.white,
-                                child: Text ('おはよう'),
+                                //border: Border.all (color: FrameColor, width: 1,),
+                                //),
+
+                                color: Colors.white,
+                                child: Text ('おはよう', style: TextStyle (color: Colors.black, fontSize: 18),),
                                 ),
                         );
 
@@ -221,14 +252,14 @@ class _PracticeForm extends State<PracticeForm>
                                 (
                                 margin: const EdgeInsets.all(0.1),
                                 padding: const EdgeInsets.all(0.1),
-                                decoration: BoxDecoration
-                                        (
-                                        color: Colors.white,
-                                        border: Border.all (color: FrameColor, width: 1,),
-                                        ),
-
+                                //decoration: BoxDecoration
+                                //(
                                 //color: Colors.white,
-                                child: Text ('こんにちは'),
+                                //border: Border.all (color: FrameColor, width: 1,),
+                                //),
+
+                                color: Colors.white,
+                                child: Text ('こんにちは', style: TextStyle (color: Colors.black, fontSize: 18),),
                                 ),
                         );
                 rows.add (Row (children: secondRow));
@@ -260,16 +291,14 @@ class _PracticeForm extends State<PracticeForm>
         {
                 Widget makeExample (int i)
                 {
-                        Color _frameColor = FrameColor;
                         Color _dividerColor = BGColor;
                         Color _hiddenColor = Colors.black;
-                        Color _bgColor = Colors.white;
+                        //Color _bgColor = ButtonColor;
                         if ( Phase == t_PHASE.QUESTION )
                         {
-                                _frameColor = BGColor;
                                 _dividerColor = Colors.white;
-                                _hiddenColor = DiglotColor;
-                                _bgColor = DiglotColor;
+                                _hiddenColor = Colors.white;
+                                //_bgColor = DiglotColor;
                         }
                         return Container
                                 (
@@ -277,9 +306,8 @@ class _PracticeForm extends State<PracticeForm>
                                 padding: const EdgeInsets.all(0.0),
                                 decoration: BoxDecoration
                                         (
-                                        color: Colors.white,
-                                        //border: Border.all (color: FrameColor, width: 3,),
-                                        border: Border.all (color: _frameColor, width: 3,),
+                                        color: ButtonColor,
+                                        border: Border.all (color: FrameColor, width: 3,),
                                         ),
 
                                 child:
@@ -293,11 +321,18 @@ class _PracticeForm extends State<PracticeForm>
                                                         [
                                                                 Expanded
                                                                         (
-                                                                        child: Text ('Un superbe texte en coreen.  Assez long pour tenir sur deux lignes'),
+                                                                        child: Container (
+                                                                                color: Colors.white,
+                                                                                margin: const EdgeInsets.all(3.0),
+                                                                                padding: const EdgeInsets.all(0.0),
+
+                                                                                child: Text ('Un superbe texte en coreen.  Assez long pour tenir sur deux lignes',
+                                                                                                     style: TextStyle (fontSize: 12),),
+                                                                                ),
                                                                         ),
                                                         ],
                                                         ),
-                                                Divider (color: BGColor, height: 10,),
+                                                //Divider (color: BGColor, height: 10,),
 
                                                 Row
                                                         (
@@ -305,26 +340,38 @@ class _PracticeForm extends State<PracticeForm>
                                                         [
                                                                 Expanded
                                                                         (
-                                                                        child: Text ('Un superbe texte en japonais.  Assez long pour tenir sur deux lignes'),
+                                                                        child: Container (
+                                                                                color: Colors.white,
+                                                                                margin: const EdgeInsets.all(3.0),
+                                                                                padding: const EdgeInsets.all(0.0),
+
+                                                                                child: Text ('Un superbe texte en japonais.  Assez long pour tenir sur deux lignes',
+                                                                                                     style: TextStyle (fontSize: 12),),
+                                                                                ),
                                                                         ),
                                                         ],
                                                         ),
-                                                Divider (color: _dividerColor, height: 10,),
+                                                //Divider (color: _dividerColor, height: 10,),
 
                                                 Row
                                                         (
                                                         children:
                                                         [
                                                                 Expanded
-                                                                        (child: Container (color: _bgColor,
+                                                                        (
+                                                                        child: Container (
+                                                                                color: Colors.white,
+                                                                                margin: const EdgeInsets.all(3.0),
+                                                                                padding: const EdgeInsets.all(0.0),
 
-                                                                                                   child: Text
-                                                                                                           (
-                                                                                                           'Un superbe texte en Anglais.  Assez long pour tenir sur deux lignes',
-                                                                                                           style: TextStyle (color: _hiddenColor),
-                                                                                                           ),
-                                                                                           ),
-                                                                         ),
+
+                                                                                child: Text
+                                                                                        (
+                                                                                        'Un superbe texte en Anglais.  Assez long pour tenir sur deux lignes',
+                                                                                        style: TextStyle (color: _hiddenColor, fontSize: 12),
+                                                                                        ),
+                                                                                ),
+                                                                        ),
                                                         ],
                                                         ),
 
@@ -348,31 +395,73 @@ class _PracticeForm extends State<PracticeForm>
                 {
                         _frameColor = BGColor;
                         _dividerColor = BGColor;
-                        _hiddenColor = DiglotColor;
-                        _bgColor = DiglotColor;
+                        _hiddenColor = BGColor;
+                        _bgColor = BGColor;
                 }
                 screenPanels.add (Container
                                           (
-                                          margin: const EdgeInsets.all(3.0),
-                                          padding: const EdgeInsets.all(0.0),
-                                          decoration: BoxDecoration
-                                                  (
-                                                  color: _bgColor,
-                                                  //border: Border.all (color: FrameColor, width: 3,),
-                                                  border: Border.all (color: _frameColor, width: 3,),
-                                                  ),
-
-                                          child:
-                                          Column
-                                                  (
-                                              children:
-                                              [
-                                                      Text('Vetements, Chaussures, Parapluie', style: TextStyle (color: _hiddenColor),),
-                                                      Divider (color: _dividerColor, height: 10,),
-                                                      Text('Ordinateurs, Laptop, Poubelle', style: TextStyle (color: _hiddenColor),),
-                                              ],
+                                      margin: const EdgeInsets.all(3.0),
+                                      padding: const EdgeInsets.all(0.0),
+                                      decoration: BoxDecoration
+                                              (
+                                              color: _bgColor,
+                                              //border: Border.all (color: FrameColor, width: 3,),
+                                              border: Border.all (color: _frameColor, width: 3,),
                                               ),
-                                          ),
+
+                                      child:
+                                      Column
+                                              (
+                                          children:
+                                          [
+                                                  Row
+                                                          (
+                                                          children:
+                                                          [
+                                                                  Expanded (child:
+                                                                            Container
+                                                                                    (
+                                                                                    color: Colors.white,
+                                                                                    margin: const EdgeInsets.all(3.0),
+                                                                                    padding: const EdgeInsets.all(0.0),
+
+                                                                                    child:
+                                                                                    Center (child: Text ('Vetements, Chaussures, Parapluie',
+                                                                                                                 style: TextStyle (color: _hiddenColor, fontSize: 18),),),
+
+                                                                                    ),
+                                                                            ),
+                                                          ],
+                                                          ),
+
+                                                  Divider (color: _dividerColor, height: 0,),
+
+                                                  Row
+                                                          (
+                                                          children:
+                                                          [
+                                                                  Expanded
+                                                                          (child:
+
+                                                                           Container
+                                                                                   (
+                                                                                   color: Colors.white,
+                                                                                   margin: const EdgeInsets.all(3.0),
+                                                                                   padding: const EdgeInsets.all(0.0),
+
+                                                                                   child:
+                                                                                   Center (child: Text (
+                                                                                           'Ordinateurs, Laptop, Poubelle', style: TextStyle (color: _hiddenColor, fontSize: 18),),
+
+                                                                                           ),
+                                                                                   ),
+                                                                           )
+
+                                                          ],
+                                                          )
+                                          ]
+                                          )
+                                      )
                                   );
         }
 
@@ -391,7 +480,7 @@ class _PracticeForm extends State<PracticeForm>
 
 
                                         Container (
-                                                width: 130,
+                                                width: 125,
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -404,16 +493,45 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton
+                                                child: RaisedButton.icon
                                                         (
+                                                        icon: Icon (Icons.arrow_left), //`Icon` to display
+                                                        label: Text ('Previous'), //`Text` to display
+                                                        color: ButtonColor,
                                                         onPressed: ()
                                                         {},
-                                                        child: Text ('Previous'),
                                                         ),
                                                 ),
 
+
                                         Container (
-                                                width: 130,
+                                                width: 60,
+                                                decoration: BoxDecoration
+                                                        (
+                                                        boxShadow:
+                                                        [
+                                                                new BoxShadow
+                                                                        (
+                                                                        color: Colors.black,
+                                                                        offset: new Offset(20.0, 10.0),
+                                                                        blurRadius: 20.0,
+                                                                        ),
+                                                        ],
+                                                        //color:  ButtonColor,
+                                                        ),
+                                                child: RaisedButton.icon
+                                                        (
+                                                        icon: Icon (Icons.edit), //`Icon` to display
+                                                        label: Text (''), //`Text` to display
+                                                        color: Colors.yellow,
+                                                        onPressed: ()
+                                                        {},
+                                                        ),
+                                                ),
+
+
+                                        Container (
+                                                width: 125,
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -426,13 +544,15 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton
+                                                child: RaisedButton.icon
                                                         (
+                                                        icon: Icon (DiglotFont.candle), //`Icon` to display
+                                                        label: Text ('Answer'), //`Text` to display
+                                                        color: ButtonColor,
                                                         onPressed: ()
                                                         {
                                                                 setPhase (t_PHASE.ANSWER);
                                                         },
-                                                        child: Text ('Show Answer'),
                                                         ),
                                                 ),
 
@@ -448,14 +568,13 @@ class _PracticeForm extends State<PracticeForm>
 
                         child: new Row(
                                 mainAxisSize: MainAxisSize.max,
-                                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: <Widget>
                                 [
 
 
                                         Container (
-                                                width: 130,
+                                                width: 125,
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -468,19 +587,52 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton
+                                                child: RaisedButton.icon
                                                         (
                                                         color: Colors.red,
                                                         onPressed: ()
                                                         {
                                                                 setPhase (t_PHASE.QUESTION);
                                                         },
-                                                        child: Text ('Wrong'),
+                                                        icon: Icon (Icons.thumb_down), //`Icon` to display
+                                                        label: Text ('Wrong'), //`Text` to display
                                                         ),
                                                 ),
 
+
                                         Container (
-                                                width: 130,
+                                                width: 60,
+                                                decoration: BoxDecoration
+                                                        (
+                                                        boxShadow:
+                                                        [
+                                                                new BoxShadow
+                                                                        (
+                                                                        color: Colors.black,
+                                                                        offset: new Offset(20.0, 10.0),
+                                                                        blurRadius: 20.0,
+                                                                        ),
+                                                        ],
+                                                        //color:  ButtonColor,
+                                                        ),
+                                                child: RaisedButton.icon
+                                                        (
+
+
+                                                        //width: 30,
+
+                                                        icon: Icon (Icons.edit), //`Icon` to display
+                                                                label: Text (''), //`Text` to display
+                                                                color: Colors.yellow,
+                                                                onPressed: ()
+                                                                {},
+                                                        //child: Text ('Tag'),
+                                                        ),
+                                                ),
+
+
+                                        Container (
+                                                width: 125,
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -493,14 +645,15 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton
+                                                child: RaisedButton.icon
                                                         (
                                                         color: Colors.green,
                                                         onPressed: ()
                                                         {
                                                                 setPhase (t_PHASE.QUESTION);
                                                         },
-                                                        child: Text ('Wright'),
+                                                        icon: Icon (Icons.thumb_up), //`Icon` to display
+                                                        label: Text ('Right'), //`Text` to display
                                                         ),
                                                 ),
 
@@ -546,6 +699,7 @@ class _PracticeForm extends State<PracticeForm>
                         backgroundColor: BGColor,
                         appBar: AppBar
                                 (
+                                backgroundColor: DiglotColor,
                                 title: Text (_formTitle),
                                 actions: <Widget>
                                 [

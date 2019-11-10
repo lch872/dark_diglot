@@ -21,9 +21,13 @@ import 'package:flutter/material.dart';
 import 'package:dark_diglot/home_form.dart';
 import 'package:dark_diglot/practice_form.dart';
 
-const DiglotColor = const Color(0xFF4d2d89);
-const BGColor =  DiglotColor;
-const ButtonColor = const Color(0xFFDEF0EC);
+const Purple = const  Color(0xFF4d2d89);
+const SteelBlueColor = const  Color(0xFF4682B4);
+const SlateBlueColor = const Color(0xFF6A5ACD);
+
+const DiglotColor = Purple;
+const BGColor =  SteelBlueColor;
+const ButtonColor = const Color(0xFFFAF0E6);
 const FrameColor = const Color(0xFF2F2376);
 const LabelColor =  Colors.amber;
 const double FrameWidth = 3;

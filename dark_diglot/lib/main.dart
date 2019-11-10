@@ -24,6 +24,7 @@ import 'package:dark_diglot/home_form.dart';
 import 'package:dark_diglot/practice_form.dart';
 import 'package:dark_diglot/globals.dart';
 
+
 // Sets a platform override for desktop to avoid exceptions. See
 // https://flutter.dev/desktop#target-platform-override for more info.
 void _enablePlatformOverrideForDesktop ()
@@ -79,7 +80,7 @@ class DiglotApp extends StatelessWidget
                         initialRoute: "/",
                         theme: ThemeData
                                 (
-                                primaryColor: DiglotColor,
+                                //primaryColor: DiglotColor,
                                 accentColor: Colors.black,
                                 buttonTheme: ButtonThemeData
                                         (

@@ -23,7 +23,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:dark_diglot/home_drawer.dart';
 import 'package:dark_diglot/globals.dart';
-
+import 'package:dark_diglot/ui/diglot_font.dart';
 import 'package:diglot_plugin/diglot_plugin.dart';
 
 _HomeForm theHomeForm;
@@ -92,7 +92,7 @@ class _HomeForm extends State<HomeForm>
                         [
                                 new Container
                                         (
-                                        color: DiglotColor,
+                                        color: BGColor,
                                         child:
                                         (
 
@@ -127,68 +127,6 @@ class _HomeForm extends State<HomeForm>
                 ;
         }
 
-
-        Widget _filter (BuildContext context)
-        {
-                return
-                        Expanded (child:
-                                  Column
-                                          (
-                                          children:
-                                          [
-                                                  Text ('Filter:', style: TextStyle (color: Colors.amber)),
-                                                  Expanded (
-                                                          //flex: 5,
-                                                          child: Container
-                                                                  (
-                                                                  margin: const EdgeInsets.all(0.0),
-                                                                  padding: const EdgeInsets.all(0.0),
-                                                                  decoration: BoxDecoration
-                                                                          (
-                                                                          color: ButtonColor,
-                                                                          border: Border.all (color: FrameColor, width: 3,),
-                                                                          ),
-
-
-                                                                  child: _filtersListView (context),
-
-                                                                  )
-
-
-                                                          ),
-                                                  Container
-                                                          (
-                                                          //width: 120,
-                                                          height: 30,
-                                                                  width: double.infinity,
-
-                                                                  //constraints: BoxConstraints.expand(),
-                                                                  margin: const EdgeInsets.all(0.0),
-                                                                  padding: const EdgeInsets.all(0.0),
-                                                                  decoration: BoxDecoration
-                                                                          (
-                                                                          color: ButtonColor,
-                                                                          border: Border.all (color: FrameColor, width: FrameWidth,),
-                                                                          ),
-
-                                                                  child: RaisedButton
-                                                                          (
-                                                                          onPressed: ()
-                                                                          {},
-                                                                          child: Text ('Filters...'),
-                                                                          ),
-                                                          ),
-
-
-                                          ],
-
-                                          ),
-                                  )
-
-                ;
-        }
-
-
         Widget _practiceMode (BuildContext context)
         {
                 return
@@ -203,10 +141,9 @@ class _HomeForm extends State<HomeForm>
                                         Expanded (
                                                 child: Container
                                                         (
-                                                        width: 120,
+                                                        width: 105,
 
-                                                        //constraints: BoxConstraints.expand(),
-                                                        margin: const EdgeInsets.all(0.0),
+                                                        margin: const EdgeInsets.all(3.0),
                                                         padding: const EdgeInsets.all(0.0),
                                                         decoration: BoxDecoration
                                                                 (
@@ -267,6 +204,7 @@ class _HomeForm extends State<HomeForm>
 
                                                                                         children:
                                                                                         [
+                                                                                                //Icon(DiglotFont.candle),
                                                                                                 Radio
                                                                                                         (
                                                                                                         value: t_MODE.ENGLISH,
@@ -286,6 +224,7 @@ class _HomeForm extends State<HomeForm>
 
                                                                                         children:
                                                                                         [
+                                                                                                //Icon(DiglotFont.browse),
                                                                                                 Radio
                                                                                                         (
                                                                                                         value: t_MODE.BROWSE,
@@ -305,6 +244,7 @@ class _HomeForm extends State<HomeForm>
 
                                                                                         children:
                                                                                         [
+                                                                                                //Icon(Icons.directions_car ),
                                                                                                 Radio
                                                                                                         (
                                                                                                         value: t_MODE.AUTO,
@@ -322,10 +262,10 @@ class _HomeForm extends State<HomeForm>
                                                 ),
                                         Container
                                                 (
-                                                width: 120,
+                                                width: 105,
                                                 height: 30,
 
-                                                margin: const EdgeInsets.all(0.0),
+                                                margin: const EdgeInsets.all(3.0),
                                                 padding: const EdgeInsets.all(0.0),
                                                 decoration: BoxDecoration
                                                         (
@@ -345,6 +285,70 @@ class _HomeForm extends State<HomeForm>
                 ;
         }
 
+
+
+        Widget _filter (BuildContext context)
+        {
+                return
+                        Expanded (child:
+                                  Column
+                                          (
+                                          children:
+                                          [
+                                                  Text ('Filter:', style: TextStyle (color: Colors.amber)),
+                                                  Expanded (
+                                                          //flex: 5,
+                                                          child: Container
+                                                                  (
+                                                                  margin: const EdgeInsets.all(3.0),
+                                                                  padding: const EdgeInsets.all(0.0),
+                                                                  decoration: BoxDecoration
+                                                                          (
+                                                                          color: ButtonColor,
+                                                                          border: Border.all (color: FrameColor, width: 3,),
+                                                                          ),
+
+
+                                                                  child: _filtersListView (context),
+
+                                                                  )
+
+
+                                                          ),
+                                                  Container
+                                                          (
+                                                          //width: 120,
+                                                          height: 30,
+                                                                  width: double.infinity,
+
+                                                                  //constraints: BoxConstraints.expand(),
+                                                                  margin: const EdgeInsets.all(3.0),
+                                                                  padding: const EdgeInsets.all(0.0),
+                                                                  decoration: BoxDecoration
+                                                                          (
+                                                                          color: ButtonColor,
+                                                                          border: Border.all (color: FrameColor, width: FrameWidth,),
+                                                                          ),
+
+                                                                  child: RaisedButton
+                                                                          (
+                                                                          onPressed: ()
+                                                                          {},
+                                                                          child: Text ('Filters...'),
+                                                                          ),
+                                                          ),
+
+
+                                          ],
+
+                                          ),
+                                  )
+
+                ;
+        }
+
+
+
         @override
         void initState ()
         {
@@ -360,6 +364,7 @@ class _HomeForm extends State<HomeForm>
                         backgroundColor: BGColor,
                         appBar: AppBar
                                 (
+                                backgroundColor: DiglotColor,
                                 title: const Text('Diglot Korean'),
                                 ),
 
@@ -369,7 +374,6 @@ class _HomeForm extends State<HomeForm>
                                 [
                                         Image.asset ('assets/images/banner.png'),
                                         Divider (color: BGColor, height: 10,),
-                                        //Center (child:
                                         Row (children: [
                                                 Text ("Classroom : ", style: TextStyle (color: LabelColor),),
                                                 Text ("KoreanDic", style: TextStyle (color: Colors.white),),
@@ -379,7 +383,7 @@ class _HomeForm extends State<HomeForm>
                                         ],
                                              ),
                                         //),
-                                        Divider (color: LabelColor, height: 30,),
+                                        Divider (color: BGColor, height: 15,),
                                         Row
                                                 (
                                             children:
