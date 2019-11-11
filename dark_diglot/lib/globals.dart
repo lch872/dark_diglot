@@ -58,7 +58,3 @@ enum t_PHASE
 }
 
 t_PHASE Phase = t_PHASE.QUESTION;
-void setPhase(t_PHASE phase)
-{
-        thePracticeForm.setState(() => Phase = phase);
-}

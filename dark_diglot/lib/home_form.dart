@@ -63,7 +63,7 @@ class _HomeForm extends State<HomeForm>
                         },
                         separatorBuilder: (context, index)
                         {
-                                return Divider (color: Colors.amber, height: 3,);
+                                return Divider (color: LabelColor, height: 3,);
                         },
 
 
@@ -92,7 +92,7 @@ class _HomeForm extends State<HomeForm>
                         [
                                 new Container
                                         (
-                                        color: SteelBlueColor,
+                                        color: BGColor,
                                         child:
                                         (
 
@@ -109,7 +109,7 @@ class _HomeForm extends State<HomeForm>
                                                             (
                                                             shape: new RoundedRectangleBorder
                                                                     (
-                                                                    borderRadius:  BorderRadius.circular(30.0),
+                                                                    borderRadius: BorderRadius.circular (30.0),
                                                                     ),
                                                             onPressed: ()
                                                             {
@@ -141,7 +141,7 @@ class _HomeForm extends State<HomeForm>
                                         Expanded (
                                                 child: Container
                                                         (
-                                                        width: 105,
+                                                        width: 115,
 
                                                         margin: const EdgeInsets.all(3.0),
                                                         padding: const EdgeInsets.all(0.0),
@@ -159,7 +159,7 @@ class _HomeForm extends State<HomeForm>
                                                                 [
                                                                         Container
                                                                                 (
-                                                                                height: 20,
+                                                                                height: 15,
                                                                                 child: Row
                                                                                         (
 
@@ -179,7 +179,7 @@ class _HomeForm extends State<HomeForm>
                                                                                 ),
                                                                         Container
                                                                                 (
-                                                                                height: 20,
+                                                                                height: 15,
                                                                                 child: Row
                                                                                         (
 
@@ -198,7 +198,7 @@ class _HomeForm extends State<HomeForm>
                                                                                 ),
                                                                         Container
                                                                                 (
-                                                                                height: 20,
+                                                                                height: 15,
                                                                                 child: Row
                                                                                         (
 
@@ -218,7 +218,7 @@ class _HomeForm extends State<HomeForm>
                                                                                 ),
                                                                         Container
                                                                                 (
-                                                                                height: 20,
+                                                                                height: 15,
                                                                                 child: Row
                                                                                         (
 
@@ -238,7 +238,7 @@ class _HomeForm extends State<HomeForm>
                                                                                 ),
                                                                         Container
                                                                                 (
-                                                                                height: 20,
+                                                                                height: 15,
                                                                                 child: Row
                                                                                         (
 
@@ -262,8 +262,8 @@ class _HomeForm extends State<HomeForm>
                                                 ),
                                         Container
                                                 (
-                                                width: 105,
-                                                height: 30,
+                                                width: 115,
+                                                height: 40,
 
                                                 margin: const EdgeInsets.all(3.0),
                                                 padding: const EdgeInsets.all(0.0),
@@ -286,7 +286,6 @@ class _HomeForm extends State<HomeForm>
         }
 
 
-
         Widget _filter (BuildContext context)
         {
                 return
@@ -295,7 +294,7 @@ class _HomeForm extends State<HomeForm>
                                           (
                                           children:
                                           [
-                                                  Text ('Filter:', style: TextStyle (color: Colors.amber)),
+                                                  Text ('Filter:', style: TextStyle (color: LabelColor)),
                                                   Expanded (
                                                           //flex: 5,
                                                           child: Container
@@ -318,7 +317,7 @@ class _HomeForm extends State<HomeForm>
                                                   Container
                                                           (
                                                           //width: 120,
-                                                          height: 30,
+                                                          height: 40,
                                                                   width: double.infinity,
 
                                                                   //constraints: BoxConstraints.expand(),
@@ -348,7 +347,6 @@ class _HomeForm extends State<HomeForm>
         }
 
 
-
         @override
         void initState ()
         {
@@ -361,45 +359,50 @@ class _HomeForm extends State<HomeForm>
         {
                 return Scaffold
                         (
-                        backgroundColor: SteelBlueColor,
+                        backgroundColor: BGColor,
                         appBar: AppBar
                                 (
                                 backgroundColor: Purple,
                                 title: const Text('Diglot Korean'),
                                 ),
 
-                        body: /*Container (color: DiglotColor, child: */Column
+                        body: Column
                                 (
 
                                 children:
                                 [
                                         Image.asset ('assets/images/banner.png'),
-                                        Divider (color: SteelBlueColor, height: 10,),
-                                        Row (children: [
-                                                Text ("Classroom : ", style: TextStyle (color: LabelColor),),
-                                                Text ("KoreanDic", style: TextStyle (color: Colors.white),),
-                                                SizedBox (width: 50.0),
-                                                Text ("Student : ", style: TextStyle (color: LabelColor),),
-                                                Text ("Marcel", style: TextStyle (color: Colors.white),),
-                                        ],
-                                             ),
-                                        //),
-                                        Divider (color: SteelBlueColor, height: 15,),
+                                        //Divider (color: Colors.black, height: 10,),
+                                        Container (  color: ButtonColor, height: 3,),
+                                        Divider (color: BGColor, height: 10,),
                                         Row
+                                                (
+                                                children:
+                                                [
+                                                        Text ("Classroom : ", style: TextStyle (color: LabelColor),),
+                                                        Text ("KoreanDic", style: TextStyle (color: Colors.white),),
+                                                        SizedBox (width: 50.0),
+                                                        Text ("Student : ", style: TextStyle (color: LabelColor),),
+                                                        Text ("Marcel", style: TextStyle (color: Colors.white),),
+                                                ],
+                                                ),
+                                        //),
+                                        //Divider (color: BGColor, height: 15,),
+                                        Container (color: Colors.white, child: Row
                                                 (
                                             children:
                                             [
-                                                    Text ('Total Cards: ', style: TextStyle (color: LabelColor)),
-                                                    Text ('12345', style: TextStyle (color: Colors.white)),
+                                                    Text ('Total Cards: ', style: TextStyle ()),
+                                                    Text ('12345',),
 
                                                     SizedBox (width: 50.0),
 
-                                                    Text ('Untested: ', style: TextStyle (color: LabelColor)),
-                                                    Text ('1234', style: TextStyle (color: Colors.white)),
+                                                    Text ('Untested: ', style: TextStyle ()),
+                                                    Text ('1234',),
                                             ]
-
                                             ),
-                                        Divider (color: LabelColor, height: 30,),
+                                                   ),
+                                        Divider (color: BGColor, height: 10,),
 
                                         Expanded (child:
 
