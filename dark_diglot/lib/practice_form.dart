@@ -142,16 +142,16 @@ class _PracticeForm extends State<PracticeForm>
                                 (
                                 child: Container
                                         (
+                                        color: Colors.white,
+                                        margin: const EdgeInsets.all(3),
+                                        padding: const EdgeInsets.all(1.5),
+                                        //decoration: BoxDecoration
+                                        //(
                                         //color: Colors.white,
-                                        margin: const EdgeInsets.all(1.5),
-                                                padding: const EdgeInsets.all(1.5),
-                                                decoration: BoxDecoration
-                                                        (
-                                                        color: Colors.white,
-                                                        border: Border.all (color: FrameColor, width: 1,),
-                                                        ),
+                                        //border: Border.all (color: FrameColor, width: 1,),
+                                        //),
 
-                                                child: Center (child: Text ('사용하다', style: TextStyle (color: Colors.black, fontSize: 28))),
+                                        child: Center (child: Text ('사용하다', style: TextStyle (color: Colors.black, fontSize: 28))),
                                         ),
                                 ),
                         );
@@ -214,17 +214,17 @@ class _PracticeForm extends State<PracticeForm>
                                 (
                                 child: Container
                                         (
+                                        color: Colors.white,
+                                        margin: const EdgeInsets.all(3),
+                                        padding: const EdgeInsets.all(1.5),
+                                        //decoration: BoxDecoration
+                                        //(
                                         //color: Colors.white,
-                                        margin: const EdgeInsets.all(1.5),
-                                                padding: const EdgeInsets.all(1.5),
-                                                decoration: BoxDecoration
-                                                        (
-                                                        color: Colors.white,
-                                                        border: Border.all (color: FrameColor, width: 1,),
-                                                        ),
+                                        //border: Border.all (color: FrameColor, width: 1,),
+                                        // ),
 
 
-                                                child: Center (child: Text ('書', style: TextStyle (color: Colors.black, fontSize: 28),),),
+                                        child: Center (child: Text ('書', style: TextStyle (color: Colors.black, fontSize: 28),),),
                                         ),
                                 ),
                         );
@@ -300,7 +300,91 @@ class _PracticeForm extends State<PracticeForm>
                                 _hiddenColor = Colors.white;
                                 //_bgColor = DiglotColor;
                         }
-                        return Container
+                        return Column
+                                (
+                                children:
+                                [
+                                        Row
+                                                (
+                                                children:
+                                                [
+                                                        Expanded
+                                                                (
+                                                                child: Container (
+                                                                        height: 32,
+                                                                        color: Colors.white,
+                                                                        margin: const EdgeInsets.all(2.0),
+                                                                        padding: const EdgeInsets.all(0.0),
+
+                                                                        child: Text (
+                                                                                'Un superbe texte en coreen.  Assez long pour tenir sur deux lignes. (du moins sur un petit telephone',
+                                                                                style: TextStyle (fontSize: 12),),
+                                                                        ),
+                                                                ),
+                                                ],
+                                                ),
+                                        //Divider (color: BGColor, height: 10,),
+
+                                        Row
+                                                (
+                                                children:
+                                                [
+                                                        Expanded
+                                                                (
+                                                                child: Container (
+                                                                        height: 32,
+                                                                        color: Colors.white,
+                                                                        margin: const EdgeInsets.all(2.0),
+                                                                        padding: const EdgeInsets.all(0.0),
+
+                                                                        child: Text ('Un superbe texte en japonais.  Assez long pour tenir sur deux lignes',
+                                                                                             style: TextStyle (fontSize: 12),),
+                                                                        ),
+                                                                ),
+                                                ],
+                                                ),
+                                        //Divider (color: _dividerColor, height: 10,),
+
+                                        Row
+                                                (
+                                                children:
+                                                [
+                                                        Expanded
+                                                                (
+                                                                child: Container (
+                                                                        height: 32,
+                                                                        color: Colors.white,
+                                                                        margin: const EdgeInsets.all(2.0),
+                                                                        padding: const EdgeInsets.all(0.0),
+
+
+                                                                        child: Text
+                                                                                (
+                                                                                'Un superbe texte en Anglais.  Assez long pour tenir sur deux lignes',
+                                                                                style: TextStyle (color: _hiddenColor, fontSize: 12),
+                                                                                ),
+                                                                        ),
+                                                                ),
+                                                ],
+                                                ),
+
+                                ],
+                                );
+                }
+                List<Widget> _ex = [];
+                for ( int i = 0; i < 2; ++i )
+                {
+                        if ( i > 0 )
+                        {
+                                _ex.add (Divider (color: FrameColor, height: 5,
+                                                          thickness: 3,
+                                                  ),);
+                        }
+                        _ex.add (makeExample (i));
+                }
+                screenPanels.add
+                        (
+                        Container
                                 (
                                 margin: const EdgeInsets.all(3.0),
                                 padding: const EdgeInsets.all(0.0),
@@ -314,75 +398,10 @@ class _PracticeForm extends State<PracticeForm>
                                 Column
                                         (
                                         children:
-                                        [
-                                                Row
-                                                        (
-                                                        children:
-                                                        [
-                                                                Expanded
-                                                                        (
-                                                                        child: Container (
-                                                                                color: Colors.white,
-                                                                                margin: const EdgeInsets.all(3.0),
-                                                                                padding: const EdgeInsets.all(0.0),
-
-                                                                                child: Text ('Un superbe texte en coreen.  Assez long pour tenir sur deux lignes',
-                                                                                                     style: TextStyle (fontSize: 12),),
-                                                                                ),
-                                                                        ),
-                                                        ],
-                                                        ),
-                                                //Divider (color: BGColor, height: 10,),
-
-                                                Row
-                                                        (
-                                                        children:
-                                                        [
-                                                                Expanded
-                                                                        (
-                                                                        child: Container (
-                                                                                color: Colors.white,
-                                                                                margin: const EdgeInsets.all(3.0),
-                                                                                padding: const EdgeInsets.all(0.0),
-
-                                                                                child: Text ('Un superbe texte en japonais.  Assez long pour tenir sur deux lignes',
-                                                                                                     style: TextStyle (fontSize: 12),),
-                                                                                ),
-                                                                        ),
-                                                        ],
-                                                        ),
-                                                //Divider (color: _dividerColor, height: 10,),
-
-                                                Row
-                                                        (
-                                                        children:
-                                                        [
-                                                                Expanded
-                                                                        (
-                                                                        child: Container (
-                                                                                color: Colors.white,
-                                                                                margin: const EdgeInsets.all(3.0),
-                                                                                padding: const EdgeInsets.all(0.0),
-
-
-                                                                                child: Text
-                                                                                        (
-                                                                                        'Un superbe texte en Anglais.  Assez long pour tenir sur deux lignes',
-                                                                                        style: TextStyle (color: _hiddenColor, fontSize: 12),
-                                                                                        ),
-                                                                                ),
-                                                                        ),
-                                                        ],
-                                                        ),
-
-                                        ],
+                                        _ex,
                                         ),
-                                );
-                }
-                for ( int i = 0; i < 2; ++i )
-                {
-                        screenPanels.add (makeExample (i));
-                }
+                                ),
+                        );
         }
 
         void makeAnswerPanel (List <Widget> screenPanels)
@@ -390,13 +409,15 @@ class _PracticeForm extends State<PracticeForm>
                 Color _frameColor = FrameColor;
                 Color _dividerColor = FrameColor;
                 Color _hiddenColor = Colors.black;
-                Color _bgColor = ButtonColor;
+                Color _bgColor = Colors.white;
+                Color _buttonColor = ButtonColor;
                 if ( Phase == t_PHASE.QUESTION )
                 {
                         _frameColor = BGColor;
                         _dividerColor = BGColor;
                         _hiddenColor = BGColor;
                         _bgColor = BGColor;
+                        _buttonColor = BGColor;
                 }
                 screenPanels.add (Container
                                           (
@@ -404,7 +425,7 @@ class _PracticeForm extends State<PracticeForm>
                                       padding: const EdgeInsets.all(0.0),
                                       decoration: BoxDecoration
                                               (
-                                              color: _bgColor,
+                                              color: _buttonColor,
                                               //border: Border.all (color: FrameColor, width: 3,),
                                               border: Border.all (color: _frameColor, width: 3,),
                                               ),
@@ -421,13 +442,14 @@ class _PracticeForm extends State<PracticeForm>
                                                                   Expanded (child:
                                                                             Container
                                                                                     (
-                                                                                    color: Colors.white,
+                                                                                    color: _bgColor,
                                                                                     margin: const EdgeInsets.all(3.0),
                                                                                     padding: const EdgeInsets.all(0.0),
+                                                                                    height: 40,
 
                                                                                     child:
-                                                                                    Center (child: Text ('Vetements, Chaussures, Parapluie',
-                                                                                                                 style: TextStyle (color: _hiddenColor, fontSize: 18),),),
+                                                                                    Center (child: Text ('Vetements, Chaussures, Parapluie, et des scoubidous',
+                                                                                                                 style: TextStyle (color: _hiddenColor, fontSize: 16),),),
 
                                                                                     ),
                                                                             ),
@@ -445,13 +467,14 @@ class _PracticeForm extends State<PracticeForm>
 
                                                                            Container
                                                                                    (
-                                                                                   color: Colors.white,
+                                                                                   color: _bgColor,
                                                                                    margin: const EdgeInsets.all(3.0),
                                                                                    padding: const EdgeInsets.all(0.0),
+                                                                                   height: 40,
 
                                                                                    child:
                                                                                    Center (child: Text (
-                                                                                           'Ordinateurs, Laptop, Poubelle', style: TextStyle (color: _hiddenColor, fontSize: 18),),
+                                                                                           'Ordinateurs, Laptop, Poubelle', style: TextStyle (color: _hiddenColor, fontSize: 16),),
 
                                                                                            ),
                                                                                    ),
@@ -470,17 +493,19 @@ class _PracticeForm extends State<PracticeForm>
         {
                 return BottomAppBar (
                         color: BGColor,
-
                         child: new Row(
                                 mainAxisSize: MainAxisSize.max,
                                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                //crossAxisAlignment: CrossAxisAlignment.stretch,
+
                                 children: <Widget>
                                 [
 
 
-                                        Container (
-                                                width: 125,
+                                        //Container (
+                                        //width: 125,
+                                        /*
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -493,33 +518,60 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton.icon
-                                                        (
-                                                        icon: Icon (Icons.arrow_left), //`Icon` to display
-                                                        label: Text ('Previous'), //`Text` to display
-                                                        color: ButtonColor,
-                                                        onPressed: ()
-                                                        {},
-                                                        ),
-                                                ),
+                                                 */
+                                        //child:
+                                        Expanded (child:
 
 
-                                        Container (
+                                                  Container
+                                                          (
+                                                          //width: 6,
+                                                          margin: const EdgeInsets.all(3.0),
+                                                                  height: 50,
+
+                                                                  child:
+
+
+                                                                  RaisedButton.icon
+                                                                          (
+                                                                          icon: Icon (Icons.arrow_left), //`Icon` to display
+                                                                          label: Text ('Prev.'), //`Text` to display
+                                                                          color: ButtonColor,
+                                                                          onPressed: ()
+                                                                          {},
+                                                                          ),
+                                                          ),
+                                                  ),
+                                        //VerticalDivider (),
+                                        //Container (width: 3.0, color: FrameColor , height),
+
+
+                                        Container
+                                                (
                                                 width: 60,
-                                                decoration: BoxDecoration
-                                                        (
-                                                        boxShadow:
-                                                        [
-                                                                new BoxShadow
-                                                                        (
-                                                                        color: Colors.black,
-                                                                        offset: new Offset(20.0, 10.0),
-                                                                        blurRadius: 20.0,
-                                                                        ),
-                                                        ],
-                                                        //color:  ButtonColor,
-                                                        ),
-                                                child: RaisedButton.icon
+                                                height: 50,
+                                                margin: const EdgeInsets.all(0.0),
+                                                //padding: const EdgeInsets.all(3.0),
+/*
+
+                                                        decoration: BoxDecoration
+                                                                (
+                                                                border: Border.all (color: Colors.blueAccent, width: 3),
+                                                                boxShadow:
+                                                                [
+                                                                        new BoxShadow
+                                                                                (
+                                                                                color: Colors.black,
+                                                                                offset: new Offset(20.0, 10.0),
+                                                                                blurRadius: 20.0,
+                                                                                ),
+                                                                ],
+                                                                //color:  ButtonColor,
+                                                                ),
+
+ */
+                                                child:
+                                                RaisedButton.icon
                                                         (
                                                         icon: Icon (Icons.edit), //`Icon` to display
                                                         label: Text (''), //`Text` to display
@@ -527,11 +579,34 @@ class _PracticeForm extends State<PracticeForm>
                                                         onPressed: ()
                                                         {},
                                                         ),
+
+
                                                 ),
+                                        /*
+                                                Container
+                                                        ( //child:  SizedBox
+                                                          //(
+                                                          margin: const EdgeInsets.all(3.0),
+                                                                  padding: const EdgeInsets.all(3.0),
+
+                                                                  //width: 5.0,
+                                                                  //height: 10,
+                                                                  //child: const DecoratedBox
+                                                                  //(
+                                                                  decoration: const BoxDecoration
+                                                                          (
+                                                                          color: Colors.red,
+                                                                          ),
+                                                          //),
+                                                          //),
+                                                          ),
+
+                                                 */
 
 
-                                        Container (
-                                                width: 125,
+                                        //Container (
+                                        //width: 125,
+                                        /*
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -544,17 +619,32 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton.icon
-                                                        (
-                                                        icon: Icon (DiglotFont.candle), //`Icon` to display
-                                                        label: Text ('Answer'), //`Text` to display
-                                                        color: ButtonColor,
-                                                        onPressed: ()
-                                                        {
-                                                                setPhase (t_PHASE.ANSWER);
-                                                        },
-                                                        ),
-                                                ),
+
+                                                 */
+                                        //child:
+                                        Expanded (child:
+
+                                                  Container
+                                                          (
+                                                          //width: 6,
+                                                          margin: const EdgeInsets.all(3.0),
+                                                                  height: 50,
+
+                                                                  child:
+
+
+                                                                  RaisedButton.icon
+                                                                          (
+                                                                          icon: Icon (DiglotFont.candle), //`Icon` to display
+                                                                          label: Text ('Answer'), //`Text` to display
+                                                                          color: ButtonColor,
+                                                                          onPressed: ()
+                                                                          {
+                                                                                  setPhase (t_PHASE.ANSWER);
+                                                                          },
+                                                                          ),
+                                                          ),
+                                                  ),
 
                                 ],
                                 ),
@@ -565,7 +655,6 @@ class _PracticeForm extends State<PracticeForm>
         {
                 return BottomAppBar (
                         color: BGColor,
-
                         child: new Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -573,8 +662,9 @@ class _PracticeForm extends State<PracticeForm>
                                 [
 
 
-                                        Container (
-                                                width: 125,
+                                        Expanded (
+                                                //width: 125,
+                                                /*
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -587,52 +677,71 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton.icon
+                                                 */
+                                                child:
+                                                Container
                                                         (
-                                                        color: Colors.red,
-                                                        onPressed: ()
-                                                        {
-                                                                setPhase (t_PHASE.QUESTION);
-                                                        },
-                                                        icon: Icon (Icons.thumb_down), //`Icon` to display
-                                                        label: Text ('Wrong'), //`Text` to display
+                                                        //width: 6,
+                                                        margin: const EdgeInsets.all(3.0),
+                                                                height: 50,
+
+                                                                child:
+
+
+                                                                RaisedButton.icon
+                                                                        (
+                                                                        color: Color (0xFFFFA0A0),
+                                                                        onPressed: ()
+                                                                        {
+                                                                                setPhase (t_PHASE.QUESTION);
+                                                                        },
+                                                                        icon: Icon (Icons.thumb_down), //`Icon` to display
+                                                                        label: Text ('Wrong'), //`Text` to display
+                                                                        ),
                                                         ),
                                                 ),
 
-
-                                        Container (
+                                        Container
+                                                (
+                                                height: 50,
                                                 width: 60,
-                                                decoration: BoxDecoration
+                                                //margin: const EdgeInsets.all(3.0),
+                                                //padding: const EdgeInsets.all(3.0),
+/*
+
+                                                        decoration: BoxDecoration
+                                                                (
+                                                                border: Border.all (color: Colors.blueAccent, width: 3),
+                                                                boxShadow:
+                                                                [
+                                                                        new BoxShadow
+                                                                                (
+                                                                                color: Colors.black,
+                                                                                offset: new Offset(20.0, 10.0),
+                                                                                blurRadius: 20.0,
+                                                                                ),
+                                                                ],
+                                                                //color:  ButtonColor,
+                                                                ),
+
+ */
+                                                child:
+                                                RaisedButton.icon
                                                         (
-                                                        boxShadow:
-                                                        [
-                                                                new BoxShadow
-                                                                        (
-                                                                        color: Colors.black,
-                                                                        offset: new Offset(20.0, 10.0),
-                                                                        blurRadius: 20.0,
-                                                                        ),
-                                                        ],
-                                                        //color:  ButtonColor,
-                                                        ),
-                                                child: RaisedButton.icon
-                                                        (
-
-
-                                                        //width: 30,
-
                                                         icon: Icon (Icons.edit), //`Icon` to display
-                                                                label: Text (''), //`Text` to display
-                                                                color: Colors.yellow,
-                                                                onPressed: ()
-                                                                {},
-                                                        //child: Text ('Tag'),
+                                                        label: Text (''), //`Text` to display
+                                                        color: Colors.yellow,
+                                                        onPressed: ()
+                                                        {},
                                                         ),
+
+
                                                 ),
 
 
-                                        Container (
-                                                width: 125,
+                                        Expanded (
+                                                //width: 125,
+                                                /*
                                                 decoration: BoxDecoration
                                                         (
                                                         boxShadow:
@@ -645,15 +754,28 @@ class _PracticeForm extends State<PracticeForm>
                                                                         ),
                                                         ],
                                                         ),
-                                                child: RaisedButton.icon
+                                                 */
+                                                child:
+
+                                                Container
                                                         (
-                                                        color: Colors.green,
-                                                        onPressed: ()
-                                                        {
-                                                                setPhase (t_PHASE.QUESTION);
-                                                        },
-                                                        icon: Icon (Icons.thumb_up), //`Icon` to display
-                                                        label: Text ('Right'), //`Text` to display
+                                                        //width: 6,
+                                                        height: 50,
+                                                        margin: const EdgeInsets.all(3.0),
+
+                                                                child:
+
+
+                                                                RaisedButton.icon
+                                                                        (
+                                                                        color: Color (0xFFA0FFA0),
+                                                                        onPressed: ()
+                                                                        {
+                                                                                setPhase (t_PHASE.QUESTION);
+                                                                        },
+                                                                        icon: Icon (Icons.thumb_up), //`Icon` to display
+                                                                        label: Text ('Right'), //`Text` to display
+                                                                        ),
                                                         ),
                                                 ),
 
@@ -693,7 +815,37 @@ class _PracticeForm extends State<PracticeForm>
                 makeHeaderPanel (_screenPanels);
                 makeKoreanPanel (_screenPanels);
                 makeExamplePanel (_screenPanels);
-                makeAnswerPanel (_screenPanels);
+                if ( Phase != t_PHASE.QUESTION )
+                {
+                        makeAnswerPanel (_screenPanels);
+                } else
+                {
+                        _screenPanels.add
+                                (
+                                Center
+                                        (
+
+                                        child:
+                                        Text ('Press "Answer"', style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                );
+
+                        _screenPanels.add
+                                (
+                                Center
+                                        (
+                                        child:
+                                        Text ('to reveal', style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                );
+
+
+                        _screenPanels.add
+                                (
+                                Center
+                                        (
+                                        child:
+                                        Text ('the word\'s meaning', style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                );
+                }
                 return Scaffold
                         (
                         backgroundColor: BGColor,

@@ -92,7 +92,7 @@ class _HomeForm extends State<HomeForm>
                         [
                                 new Container
                                         (
-                                        color: BGColor,
+                                        color: SteelBlueColor,
                                         child:
                                         (
 
@@ -361,19 +361,20 @@ class _HomeForm extends State<HomeForm>
         {
                 return Scaffold
                         (
-                        backgroundColor: BGColor,
+                        backgroundColor: SteelBlueColor,
                         appBar: AppBar
                                 (
-                                backgroundColor: DiglotColor,
+                                backgroundColor: Purple,
                                 title: const Text('Diglot Korean'),
                                 ),
 
                         body: /*Container (color: DiglotColor, child: */Column
                                 (
+
                                 children:
                                 [
                                         Image.asset ('assets/images/banner.png'),
-                                        Divider (color: BGColor, height: 10,),
+                                        Divider (color: SteelBlueColor, height: 10,),
                                         Row (children: [
                                                 Text ("Classroom : ", style: TextStyle (color: LabelColor),),
                                                 Text ("KoreanDic", style: TextStyle (color: Colors.white),),
@@ -383,7 +384,7 @@ class _HomeForm extends State<HomeForm>
                                         ],
                                              ),
                                         //),
-                                        Divider (color: BGColor, height: 15,),
+                                        Divider (color: SteelBlueColor, height: 15,),
                                         Row
                                                 (
                                             children:

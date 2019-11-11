@@ -24,10 +24,11 @@ import 'package:dark_diglot/practice_form.dart';
 const Purple = const  Color(0xFF4d2d89);
 const SteelBlueColor = const  Color(0xFF4682B4);
 const SlateBlueColor = const Color(0xFF6A5ACD);
+const LimeColor = const Color(0xFFFAF0E6);
 
-const DiglotColor = Purple;
+const DiglotColor = SteelBlueColor;
 const BGColor =  SteelBlueColor;
-const ButtonColor = const Color(0xFFFAF0E6);
+const ButtonColor = LimeColor;
 const FrameColor = const Color(0xFF2F2376);
 const LabelColor =  Colors.amber;
 const double FrameWidth = 3;

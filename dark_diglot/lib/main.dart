@@ -80,13 +80,13 @@ class DiglotApp extends StatelessWidget
                         initialRoute: "/",
                         theme: ThemeData
                                 (
-                                //primaryColor: DiglotColor,
-                                accentColor: Colors.black,
+                                primaryColor: DiglotColor,
+                                //accentColor: Colors.black,
                                 buttonTheme: ButtonThemeData
                                         (
                                         buttonColor: ButtonColor,
                                         shape: RoundedRectangleBorder (),
-                                        textTheme: ButtonTextTheme.accent,
+                                        //textTheme: ButtonTextTheme.accent,
                                         ),
                                 ),
                         );
