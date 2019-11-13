@@ -23,7 +23,14 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:dark_diglot/globals.dart';
 import 'package:dark_diglot/ui/diglot_font.dart';
-//import 'package:after_layout/after_layout.dart';
+
+import 'package:markdown/markdown.dart' as md;
+import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:url_launcher/url_launcher.dart';
+/////////////import 'package:webview_flutter/webview_flutter.dart';
+/////////////import 'package:flutter_html_view/flutter_html_view.dart';
+
 
 
 _PracticeForm thePracticeForm;
@@ -408,6 +415,135 @@ class _PracticeForm extends State<PracticeForm> //with AfterLayoutMixin<Practice
                         );
         }
 
+        void makeAnnotationPanel (List <Widget> screenPanels)
+        {
+                final String toto = """
+This is a user annotation for a given card.
+Card annotation can be specified using the `Markdown` syntax.
+`Markdown` syntax is much simpler and, overall, <u>more readable</u> than HTML.
+
+With `Markdown` you can :
+- Specify a bullet list items
+- Put some words __bold__, <u>underline</u> or *italic*
+- Put a [link](http://www.canardoux.xyz) to a www page
+- ... and many other nice things :+1:
+
+"""
+                    //Optional parameters:
+                    + """<ruby>
+                    明日 <rp>(</rp><rt>Ashita</rt><rp>)</rp>
+        漢 <rp>(</rp><rt>Kan</rt><rp>)</rp>
+                                字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                </ruby>""";
+
+
+                screenPanels.add
+                        (
+                        Container
+                                (
+                                height: 100,
+                                margin: const EdgeInsets.all(3.0),
+                                //padding: const EdgeInsets.all(3.0),
+
+
+                                decoration: BoxDecoration
+                                        (
+                                        color: ButtonColor,
+                                        //border: Border.all (color: FrameColor, width: 3,),
+                                        border: Border.all (color: FrameColor, width: 3,),
+                                        ),
+
+// ================================================================
+
+// First test
+// ----------
+/*                                       child: Markdown
+                                            (
+                                            shrinkWrap: true,
+                                            data: toto
+                                            ),
+
+*/
+
+// Second test
+// -----------
+/**/
+                                child: SingleChildScrollView
+                                        (
+                                        child: Html
+                                                (
+
+                                                data: md.markdownToHtml (toto),
+                                                padding: EdgeInsets.all (8.0),
+                                                linkStyle: const TextStyle
+                                                        (
+                                                        color: Colors.redAccent,
+                                                        decorationColor: Colors.redAccent,
+                                                        decoration: TextDecoration.underline,
+                                                        ),
+                                                onLinkTap: (url)
+                                                {
+                                                        print ("Opening $url...");
+                                                        _launchURL (url)
+                                                        async {
+                                                                if ( await canLaunch (url) )
+                                                                {
+                                                                        await launch (url);
+                                                                } else
+                                                                {
+                                                                        throw 'Could not launch $url';
+                                                                }
+                                                        }
+                                                        _launchURL (url);
+                                                },
+                                                ),
+
+                                        ),
+/**/
+
+
+
+/*
+// Third test
+// ----------
+
+                               child: WebView(
+                                        initialUrl: 'https://flutter.io',
+                                        javascriptMode: JavascriptMode.unrestricted,
+                                        ),
+*/
+
+
+/*
+// Fourth test
+// -----------
+                                child : flutterWebViewString,
+                                height: 300.0,
+                                width: 500.0,
+*/
+
+
+/*
+// Fifth test
+// ----------
+
+                                child: SingleChildScrollView(
+                                        child: new Center(
+                                                child: new HtmlView(data: toto),
+                                                ),
+                                        ),
+*/
+
+
+
+// ================================================================================================
+
+
+                )
+                );
+        }
+
+
         void makeAnswerPanel (List <Widget> screenPanels)
         {
                 Color _frameColor = FrameColor;
@@ -782,6 +918,7 @@ class _PracticeForm extends State<PracticeForm> //with AfterLayoutMixin<Practice
                         );
         }
 
+
         Widget _makeBottomBar (BuildContext context)
         {
                 switch ( Mode )
@@ -803,6 +940,54 @@ class _PracticeForm extends State<PracticeForm> //with AfterLayoutMixin<Practice
                                 return null;
                 }
         }
+
+        void makeMaskPanel (List <Widget> screenPanels)
+        {
+                if ( Phase != t_PHASE.QUESTION )
+                        return;
+                        if ( freeHeight > 0.0 )
+                        {
+                                //final _height = _screen_height - 132 - cardHeight; // 132 is a constant HACK !
+                                //if ( _height > 0 )
+                                screenPanels.add
+                                        (
+                                        InkWell
+                                                (
+                                                onTap: ()
+                                                {
+                                                        showCard (t_PHASE.ANSWER);
+                                                },
+
+                                                child: Container
+                                                        (
+                                                        height: freeHeight,
+                                                        color: BGColor,
+                                                        child: /* Column
+                                                            (
+                                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                            children:
+                                                            [
+                                                                    //Center
+                                                                            //(
+                                                                            //child:
+                                                                            Center( child: Text ('Press "Answer" to show', style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                                                            //),
+                                                                    //Center
+                                                                            //(
+                                                                            //child:
+                                                                            Expanded( child: Text ('the text meaning', style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                                                            //),
+                                                            ],
+                                                            ),*/
+                                                        Center (child: Text ('Press "Answer" to show\nthe text meaning', textAlign: TextAlign.center,
+                                                                                     style: TextStyle (color: Colors.grey, fontSize: 28),),),
+                                                        ),
+                                                ),
+                                        );
+                        }
+        }
+
 
         GlobalKey _keyList = GlobalKey ();
         GlobalKey _keyAppbar = GlobalKey ();
@@ -859,52 +1044,11 @@ class _PracticeForm extends State<PracticeForm> //with AfterLayoutMixin<Practice
                 String _formTitle = (Mode == t_MODE.BROWSE) ? 'Browser (33/1234)' : 'Average 77%';
                 makeHeaderPanel (_screenPanels);
                 makeKoreanPanel (_screenPanels);
-                makeExamplePanel (_screenPanels);
-                if ( Phase != t_PHASE.QUESTION )
-                {
-                        makeAnswerPanel (_screenPanels);
-                } else
-                {
-                        if ( freeHeight > 0.0 )
-                        {
-                                //final _height = _screen_height - 132 - cardHeight; // 132 is a constant HACK !
-                                //if ( _height > 0 )
-                                _screenPanels.add
-                                        (
-                                    InkWell
-                                            (
-                                            onTap: ()
-                                            {
-                                                    showCard (t_PHASE.ANSWER);
-                                            },
+                makeExamplePanel(_screenPanels);
+                makeAnswerPanel (_screenPanels);
+                makeAnnotationPanel (_screenPanels);
+                makeMaskPanel (_screenPanels);
 
-                                            child: Container
-                                                    (
-                                                    height: freeHeight,
-                                                    color: BGColor,
-                                                    child:  Column
-                                                            (
-                                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                                            mainAxisAlignment: MainAxisAlignment.center,
-                                                            children:
-                                                            [
-                                                                    //Center
-                                                                            //(
-                                                                            //child:
-                                                                            Expanded( child: Text ('Press "Answer" to show', style: TextStyle (color: Colors.grey, fontSize: 28),),),
-                                                                            //),
-                                                                    //Center
-                                                                            //(
-                                                                            //child:
-                                                                            Expanded( child: Text ('the text meaning', style: TextStyle (color: Colors.grey, fontSize: 28),),),
-                                                                            //),
-                                                            ],
-                                                            ),
-                                                    ),
-                                            ),
-                                    );
-                        }
-                }
                 return Scaffold
                         (
                         backgroundColor: BGColor,

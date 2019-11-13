@@ -2,20 +2,26 @@ PODS:
   - diglot_plugin (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - url_launcher (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - diglot_plugin (from `.symlinks/plugins/diglot_plugin/ios`)
   - Flutter (from `Flutter`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
 EXTERNAL SOURCES:
   diglot_plugin:
     :path: ".symlinks/plugins/diglot_plugin/ios"
   Flutter:
     :path: Flutter
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
   diglot_plugin: b47620bf1c582a4f1f80d40bab5566d45c9028e8
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 
 PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
 

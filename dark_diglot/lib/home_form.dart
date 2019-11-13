@@ -387,7 +387,7 @@ class _HomeForm extends State<HomeForm>
                                                 ],
                                                 ),
                                         //),
-                                        //Divider (color: BGColor, height: 15,),
+                                        Divider (color: BGColor, height: 5,),
                                         Container (color: Colors.white, child: Row
                                                 (
                                             children:
